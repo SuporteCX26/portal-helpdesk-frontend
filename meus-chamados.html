@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abrir Chamado | SuporteCX</title>
+  <title>Meus Chamados | SuporteCX</title>
   
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -23,145 +23,174 @@
       <nav class="flex items-center gap-4 sm:gap-6">
         <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Início</a>
         <a href="faq.html" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Base de Conhecimento</a>
-        <a href="meus-chamados.html" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Meus Chamados</a>
+        <a href="meus-chamados.html" class="text-sm font-semibold text-indigo-600">Meus Chamados</a>
+        <a href="novo-ticket.html" class="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-all shadow-sm">
+          <i data-lucide="plus-circle" class="w-4 h-4"></i>
+          <span>Abrir Ticket</span>
+        </a>
       </nav>
     </div>
   </header>
 
-  <main class="flex-grow py-10 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto">
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+    
+    <!-- Cabeçalho da Seção -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Meus Chamados</h1>
+        <p class="text-slate-500 text-sm sm:text-base mt-1">Acompanhe e responda às solicitações de suporte enviadas à nossa equipe.</p>
+      </div>
+      <a href="novo-ticket.html" class="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm transition-all w-fit">
+        <i data-lucide="plus" class="w-4 h-4"></i>
+        Novo Chamado
+      </a>
+    </div>
+
+    <!-- Barra de Ferramentas: Filtros e Busca -->
+    <div class="bg-white border border-slate-200 rounded-xl p-4 mb-6 shadow-sm flex flex-col sm:flex-row gap-4 justify-between items-center">
       
-      <!-- Cabeçalho do Formulário -->
-      <div class="mb-8">
-        <a href="index.html" class="inline-flex items-center gap-1 text-sm font-medium text-slate-500 hover:text-indigo-600 mb-3 transition-colors">
-          <i data-lucide="arrow-left" class="w-4 h-4"></i>
-          Voltar para o início
-        </a>
-        <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Abrir um novo chamado</h1>
-        <p class="text-slate-500 text-sm sm:text-base mt-1">
-          Preencha os dados abaixo detalhadamente para que nossa equipe técnica possa te ajudar mais rápido.
-        </p>
+      <!-- Abas de Filtro por Status -->
+      <div class="flex flex-wrap gap-2 w-full sm:w-auto">
+        <button data-filter="all" class="filter-btn bg-indigo-50 text-indigo-700 font-semibold px-3.5 py-1.5 rounded-lg text-sm transition-colors">
+          Todos (4)
+        </button>
+        <button data-filter="aberto" class="filter-btn text-slate-600 hover:bg-slate-100 font-medium px-3.5 py-1.5 rounded-lg text-sm transition-colors">
+          Em Aberto (2)
+        </button>
+        <button data-filter="pendente" class="filter-btn text-slate-600 hover:bg-slate-100 font-medium px-3.5 py-1.5 rounded-lg text-sm transition-colors">
+          Aguardando Resposta (1)
+        </button>
+        <button data-filter="resolvido" class="filter-btn text-slate-600 hover:bg-slate-100 font-medium px-3.5 py-1.5 rounded-lg text-sm transition-colors">
+          Resolvidos (1)
+        </button>
       </div>
 
-      <!-- Formulário de Ticket -->
-      <form id="ticketForm" class="bg-white border border-slate-200 rounded-xl shadow-sm p-6 sm:p-8 space-y-6">
-        
-        <!-- Grid de Dados de Contato -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div>
-            <label for="nome" class="block text-sm font-semibold text-slate-700 mb-2">Seu Nome Completo *</label>
-            <input 
-              type="text" 
-              id="nome" 
-              name="nome" 
-              required
-              placeholder="Ex: Ana Silva" 
-              class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm text-slate-900"
-            >
-          </div>
+      <!-- Input de Busca Interna -->
+      <div class="relative w-full sm:w-72">
+        <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+        <input 
+          type="text" 
+          id="searchInput"
+          placeholder="Buscar ticket ou assunto..." 
+          class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all"
+        >
+      </div>
+    </div>
 
-          <div>
-            <label for="email" class="block text-sm font-semibold text-slate-700 mb-2">E-mail de Contato *</label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              required
-              placeholder="ana@empresa.com" 
-              class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm text-slate-900"
-            >
-          </div>
-        </div>
+    <!-- Tabela de Chamados -->
+    <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-50 border-b border-slate-200 text-slate-500 text-xs uppercase tracking-wider font-semibold">
+              <th class="py-3.5 px-6">ID / Assunto</th>
+              <th class="py-3.5 px-4">Categoria</th>
+              <th class="py-3.5 px-4">Atualizado em</th>
+              <th class="py-3.5 px-4">Status</th>
+              <th class="py-3.5 px-6 text-right">Ação</th>
+            </tr>
+          </thead>
+          <tbody id="ticketsTableBody" class="divide-y divide-slate-100 text-sm">
+            
+            <!-- Ticket 1 -->
+            <tr class="ticket-row hover:bg-slate-50/80 transition-colors" data-status="aberto">
+              <td class="py-4 px-6">
+                <span class="text-xs font-mono font-bold text-slate-400 block">#TK-1082</span>
+                <span class="font-semibold text-slate-900 hover:text-indigo-600 cursor-pointer">Erro 500 ao gerar relatório de faturamento mensal</span>
+              </td>
+              <td class="py-4 px-4 text-slate-600">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 rounded-md text-xs font-medium text-slate-700">
+                  <i data-lucide="wrench" class="w-3.5 h-3.5"></i> Suporte Técnico
+                </span>
+              </td>
+              <td class="py-4 px-4 text-slate-500 text-xs">Hoje às 14:20</td>
+              <td class="py-4 px-4">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+                  <span class="w-2 h-2 rounded-full bg-amber-500"></span> Em Aberto
+                </span>
+              </td>
+              <td class="py-4 px-6 text-right">
+                <button class="text-indigo-600 hover:text-indigo-800 font-medium text-xs hover:underline flex items-center gap-1 ml-auto">
+                  Ver detalhes <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </button>
+              </td>
+            </tr>
 
-        <!-- Categoria e Prioridade -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div>
-            <label for="categoria" class="block text-sm font-semibold text-slate-700 mb-2">Categoria do Problema *</label>
-            <select 
-              id="categoria" 
-              name="categoria" 
-              required 
-              class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm text-slate-900 bg-white"
-            >
-              <option value="" disabled selected>Selecione uma categoria</option>
-              <option value="tecnico">Suporte Técnico / Erro no Sistema</option>
-              <option value="financeiro">Financeiro / Faturamento</option>
-              <option value="conta">Acesso / Permissões de Conta</option>
-              <option value="outros">Outros Assuntos</option>
-            </select>
-          </div>
+            <!-- Ticket 2 -->
+            <tr class="ticket-row hover:bg-slate-50/80 transition-colors" data-status="pendente">
+              <td class="py-4 px-6">
+                <span class="text-xs font-mono font-bold text-slate-400 block">#TK-1079</span>
+                <span class="font-semibold text-slate-900 hover:text-indigo-600 cursor-pointer">Solicitação de alteração no limite de usuários ativados</span>
+              </td>
+              <td class="py-4 px-4 text-slate-600">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 rounded-md text-xs font-medium text-slate-700">
+                  <i data-lucide="user-cog" class="w-3.5 h-3.5"></i> Conta
+                </span>
+              </td>
+              <td class="py-4 px-4 text-slate-500 text-xs">Ontem às 18:45</td>
+              <td class="py-4 px-4">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-purple-50 text-purple-700 border border-purple-200">
+                  <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span> Aguardando Você
+                </span>
+              </td>
+              <td class="py-4 px-6 text-right">
+                <button class="text-indigo-600 hover:text-indigo-800 font-medium text-xs hover:underline flex items-center gap-1 ml-auto">
+                  Responder <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </button>
+              </td>
+            </tr>
 
-          <div>
-            <label for="urgencia" class="block text-sm font-semibold text-slate-700 mb-2">Nível de Urgência *</label>
-            <select 
-              id="urgencia" 
-              name="urgencia" 
-              required 
-              class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm text-slate-900 bg-white"
-            >
-              <option value="baixa">Baixa (Dúvida pontual)</option>
-              <option value="media" selected>Média (Impacto parcial)</option>
-              <option value="alta">Alta (Funcionalidade importante parada)</option>
-              <option value="critica">Crítica (Sistema completamente fora do ar)</option>
-            </select>
-          </div>
-        </div>
+            <!-- Ticket 3 -->
+            <tr class="ticket-row hover:bg-slate-50/80 transition-colors" data-status="aberto">
+              <td class="py-4 px-6">
+                <span class="text-xs font-mono font-bold text-slate-400 block">#TK-1065</span>
+                <span class="font-semibold text-slate-900 hover:text-indigo-600 cursor-pointer">Dúvida sobre o envio automático da nota fiscal via API</span>
+              </td>
+              <td class="py-4 px-4 text-slate-600">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 rounded-md text-xs font-medium text-slate-700">
+                  <i data-lucide="credit-card" class="w-3.5 h-3.5"></i> Financeiro
+                </span>
+              </td>
+              <td class="py-4 px-4 text-slate-500 text-xs">02 de Set, 2026</td>
+              <td class="py-4 px-4">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">
+                  <span class="w-2 h-2 rounded-full bg-blue-500"></span> Em Atendimento
+                </span>
+              </td>
+              <td class="py-4 px-6 text-right">
+                <button class="text-indigo-600 hover:text-indigo-800 font-medium text-xs hover:underline flex items-center gap-1 ml-auto">
+                  Ver detalhes <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </button>
+              </td>
+            </tr>
 
-        <!-- Assunto -->
-        <div>
-          <label for="assunto" class="block text-sm font-semibold text-slate-700 mb-2">Assunto / Resumo *</label>
-          <input 
-            type="text" 
-            id="assunto" 
-            name="assunto" 
-            required
-            placeholder="Ex: Erro 500 ao gerar relatório financeiro" 
-            class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm text-slate-900"
-          >
-        </div>
+            <!-- Ticket 4 -->
+            <tr class="ticket-row hover:bg-slate-50/80 transition-colors" data-status="resolvido">
+              <td class="py-4 px-6">
+                <span class="text-xs font-mono font-bold text-slate-400 block">#TK-0980</span>
+                <span class="font-semibold text-slate-900 hover:text-indigo-600 cursor-pointer">Reset de senha do usuário master do departamento</span>
+              </td>
+              <td class="py-4 px-4 text-slate-600">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 rounded-md text-xs font-medium text-slate-700">
+                  <i data-lucide="user-cog" class="w-3.5 h-3.5"></i> Conta
+                </span>
+              </td>
+              <td class="py-4 px-4 text-slate-500 text-xs">28 de Ago, 2026</td>
+              <td class="py-4 px-4">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Resolvido
+                </span>
+              </td>
+              <td class="py-4 px-6 text-right">
+                <button class="text-indigo-600 hover:text-indigo-800 font-medium text-xs hover:underline flex items-center gap-1 ml-auto">
+                  Ver histórico <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </button>
+              </td>
+            </tr>
 
-        <!-- Descrição -->
-        <div>
-          <label for="descricao" class="block text-sm font-semibold text-slate-700 mb-2">Descrição Detalhada *</label>
-          <textarea 
-            id="descricao" 
-            name="descricao" 
-            rows="5" 
-            required
-            placeholder="Descreva o passo a passo do que aconteceu, mensagens de erro exatas, etc." 
-            class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm text-slate-900"
-          ></textarea>
-        </div>
-
-        <!-- Área de Upload (Drag and Drop) -->
-        <div>
-          <label class="block text-sm font-semibold text-slate-700 mb-2">Anexos (Capturas de tela ou logs)</label>
-          <div 
-            id="dropZone" 
-            class="border-2 border-dashed border-slate-300 hover:border-indigo-500 rounded-lg p-6 text-center bg-slate-50 hover:bg-indigo-50/30 transition-colors cursor-pointer"
-          >
-            <i data-lucide="upload-cloud" class="w-8 h-8 mx-auto text-slate-400 mb-2"></i>
-            <p class="text-sm font-medium text-slate-700">Arraste arquivos aqui ou <span class="text-indigo-600 underline">clique para selecionar</span></p>
-            <p class="text-xs text-slate-400 mt-1">PNG, JPG, PDF até 10MB</p>
-            <input type="file" id="fileInput" class="hidden" multiple>
-          </div>
-          <ul id="fileList" class="mt-3 space-y-2 text-xs text-slate-600"></ul>
-        </div>
-
-        <!-- Ações do Formulário -->
-        <div class="flex items-center justify-end gap-4 pt-4 border-t border-slate-100">
-          <a href="index.html" class="px-5 py-2.5 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-50 text-sm font-medium transition-colors">
-            Cancelar
-          </a>
-          <button 
-            type="submit" 
-            class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2.5 rounded-lg shadow-sm transition-all text-sm"
-          >
-            <i data-lucide="send" class="w-4 h-4"></i>
-            Enviar Chamado
-          </button>
-        </div>
-      </form>
+          </tbody>
+        </table>
+      </div>
     </div>
   </main>
 
@@ -176,49 +205,50 @@
     </div>
   </footer>
 
-  <!-- Interação em Vanilla JS -->
+  <!-- Lógica de Filtro em JS -->
   <script>
     lucide.createIcons();
 
-    // Manipulação do Upload Drag and Drop
-    const dropZone = document.getElementById('dropZone');
-    const fileInput = document.getElementById('fileInput');
-    const fileList = document.getElementById('fileList');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const ticketRows = document.querySelectorAll('.ticket-row');
+    const searchInput = document.getElementById('searchInput');
 
-    dropZone.addEventListener('click', () => fileInput.click());
+    // Filtro por Abas de Status
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Estilização do botão ativo
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-indigo-50', 'text-indigo-700', 'font-semibold');
+          b.classList.add('text-slate-600', 'font-medium');
+        });
+        btn.classList.add('bg-indigo-50', 'text-indigo-700', 'font-semibold');
+        btn.classList.remove('text-slate-600', 'font-medium');
 
-    fileInput.addEventListener('change', (e) => {
-      displayFiles(e.target.files);
-    });
+        const filter = btn.getAttribute('data-filter');
 
-    dropZone.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      dropZone.classList.add('border-indigo-500', 'bg-indigo-50/50');
-    });
-
-    dropZone.addEventListener('dragleave', () => {
-      dropZone.classList.remove('border-indigo-500', 'bg-indigo-50/50');
-    });
-
-    dropZone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      dropZone.classList.remove('border-indigo-500', 'bg-indigo-50/50');
-      if (e.dataTransfer.files.length) {
-        fileInput.files = e.dataTransfer.files;
-        displayFiles(e.dataTransfer.files);
-      }
-    });
-
-    function displayFiles(files) {
-      fileList.innerHTML = '';
-      Array.from(files).forEach(file => {
-        const li = document.createElement('li');
-        li.className = 'flex items-center gap-2 text-indigo-700 bg-indigo-50 px-3 py-1.5 rounded-md w-fit';
-        li.innerHTML = `<i data-lucide="paperclip" class="w-3.5 h-3.5"></i> ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
-        fileList.appendChild(li);
+        ticketRows.forEach(row => {
+          if (filter === 'all' || row.getAttribute('data-status') === filter) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
       });
-      lucide.createIcons();
-    }
+    });
+
+    // Busca por Texto em Tempo Real
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+
+      ticketRows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        if (text.includes(searchTerm)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    });
   </script>
 </body>
 </html>
