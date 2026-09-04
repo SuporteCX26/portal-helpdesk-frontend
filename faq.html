@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base de Conhecimento | SuporteCX</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Ícones Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    /* Suaviza a rolagem ao clicar nos links laterais */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Header / Navegação -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-indigo-600 font-bold text-xl tracking-tight">
+        <i data-lucide="headphones" class="w-6 h-6"></i>
+        <span>Suporte<span class="text-slate-900">CX</span></span>
+      </a>
+
+      <nav class="flex items-center gap-4 sm:gap-6">
+        <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Início</a>
+        <a href="meus-chamados.html" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Meus Chamados</a>
+        <a href="novo-ticket.html" class="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-all shadow-sm">
+          <i data-lucide="plus-circle" class="w-4 h-4"></i>
+          <span>Abrir Ticket</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Busca Secundária -->
+  <div class="bg-indigo-900 py-8 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="relative">
+        <i data-lucide="search" class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+        <input 
+          type="search" 
+          placeholder="Busque por artigos ou palavras-chave..." 
+          class="w-full pl-12 pr-4 py-3 rounded-lg text-slate-900 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        >
+      </div>
+    </div>
+  </div>
+
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full flex flex-col md:flex-row gap-8">
+    
+    <!-- Sidebar de Categorias (Desktop fixo, Mobile empilhado) -->
+    <aside class="w-full md:w-64 flex-shrink-0">
+      <div class="sticky top-24">
+        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Navegar por Tópicos</h3>
+        <nav class="flex flex-col gap-2">
+          <a href="#primeiros-passos" class="px-3 py-2 rounded-lg text-sm font-medium text-indigo-600 bg-indigo-50 transition-colors">
+            Primeiros Passos
+          </a>
+          <a href="#financeiro" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition-colors">
+            Faturamento e Planos
+          </a>
+          <a href="#solucao-problemas" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition-colors">
+            Solução de Problemas
+          </a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Conteúdo da FAQ (Sanfonas) -->
+    <section class="flex-grow bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-sm">
+      
+      <!-- Categoria 1 -->
+      <div id="primeiros-passos" class="mb-10 pt-4 scroll-mt-24">
+        <div class="flex items-center gap-2 mb-6 pb-2 border-b border-slate-100">
+          <i data-lucide="rocket" class="w-6 h-6 text-indigo-600"></i>
+          <h2 class="text-xl font-bold text-slate-900">Primeiros Passos</h2>
+        </div>
+        
+        <div class="space-y-4">
+          <!-- Accordion Item 1 -->
+          <div class="border border-slate-200 rounded-lg overflow-hidden">
+            <button class="accordion-header w-full px-5 py-4 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors focus:outline-none">
+              <span class="font-medium text-slate-800">Como crio minha conta e faço o primeiro login?</span>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+            </button>
+            <div class="accordion-content hidden px-5 pb-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 bg-white pt-4">
+              <p>Para criar sua conta, acesse a página inicial e clique em "Criar Conta". Você receberá um e-mail de confirmação. Após clicar no link do e-mail, sua conta estará ativa e você poderá fazer o login utilizando suas credenciais.</p>
+            </div>
+          </div>
+
+          <!-- Accordion Item 2 -->
+          <div class="border border-slate-200 rounded-lg overflow-hidden">
+            <button class="accordion-header w-full px-5 py-4 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors focus:outline-none">
+              <span class="font-medium text-slate-800">Como convido outros membros da minha equipe?</span>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+            </button>
+            <div class="accordion-content hidden px-5 pb-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 bg-white pt-4">
+              <p>Vá até <strong>Configurações > Equipe</strong> no menu esquerdo do painel. Clique no botão "Convidar Membro", insira o e-mail do seu colega e defina o nível de permissão (Administrador ou Agente). Um convite será enviado imediatamente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categoria 2 -->
+      <div id="financeiro" class="mb-10 pt-4 scroll-mt-24">
+        <div class="flex items-center gap-2 mb-6 pb-2 border-b border-slate-100">
+          <i data-lucide="credit-card" class="w-6 h-6 text-indigo-600"></i>
+          <h2 class="text-xl font-bold text-slate-900">Faturamento e Planos</h2>
+        </div>
+        
+        <div class="space-y-4">
+          <!-- Accordion Item 3 -->
+          <div class="border border-slate-200 rounded-lg overflow-hidden">
+            <button class="accordion-header w-full px-5 py-4 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors focus:outline-none">
+              <span class="font-medium text-slate-800">Onde posso emitir a segunda via do boleto?</span>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+            </button>
+            <div class="accordion-content hidden px-5 pb-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 bg-white pt-4">
+              <p>Os boletos ficam disponíveis na seção <strong>Financeiro > Faturas</strong>. Caso um boleto esteja vencido, o sistema calculará automaticamente os juros ao gerar um novo PDF.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categoria 3 -->
+      <div id="solucao-problemas" class="mb-4 pt-4 scroll-mt-24">
+        <div class="flex items-center gap-2 mb-6 pb-2 border-b border-slate-100">
+          <i data-lucide="wrench" class="w-6 h-6 text-indigo-600"></i>
+          <h2 class="text-xl font-bold text-slate-900">Solução de Problemas</h2>
+        </div>
+        
+        <div class="space-y-4">
+          <!-- Accordion Item 4 -->
+          <div class="border border-slate-200 rounded-lg overflow-hidden">
+            <button class="accordion-header w-full px-5 py-4 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors focus:outline-none">
+              <span class="font-medium text-slate-800">Estou recebendo o "Erro 500". O que devo fazer?</span>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+            </button>
+            <div class="accordion-content hidden px-5 pb-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 bg-white pt-4">
+              <p>O Erro 500 indica uma falha de comunicação com nossos servidores. Limpe o cache do seu navegador e tente novamente. Se o problema persistir por mais de 10 minutos, verifique nossa página de status ou abra um chamado técnico.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action (Contato) -->
+      <div class="mt-12 bg-indigo-50 border border-indigo-100 rounded-xl p-6 text-center">
+        <h3 class="text-lg font-bold text-indigo-900 mb-2">Não encontrou o que procurava?</h3>
+        <p class="text-indigo-700 text-sm mb-6">Nossa equipe de suporte está pronta para te ajudar de segunda a sexta, das 09h às 18h.</p>
+        <a href="novo-ticket.html" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">
+          <i data-lucide="message-square" class="w-4 h-4"></i>
+          Abrir Chamado
+        </a>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="bg-slate-900 text-slate-400 py-8 px-4 sm:px-6 lg:px-8 mt-auto border-t border-slate-800 text-sm">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>&copy; 2026 SuporteCX. Todos os direitos reservados.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-white transition-colors">Termos de Uso</a>
+        <a href="#" class="hover:text-white transition-colors">Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lógica da Sanfona (Accordion) -->
+  <script>
+    lucide.createIcons();
+
+    // Script simples para abrir e fechar as perguntas
+    document.addEventListener('DOMContentLoaded', () => {
+      const headers = document.querySelectorAll('.accordion-header');
+
+      headers.forEach(header => {
+        header.addEventListener('click', () => {
+          const content = header.nextElementSibling;
+          const icon = header.querySelector('i');
+          const isHidden = content.classList.contains('hidden');
+
+          // Opcional: Fecha todos os outros abertos para manter a tela limpa
+          document.querySelectorAll('.accordion-content').forEach(el => {
+            el.classList.add('hidden');
+          });
+          document.querySelectorAll('.accordion-header i').forEach(el => {
+            el.classList.remove('rotate-180');
+          });
+
+          // Se estava escondido, abre o atual
+          if (isHidden) {
+            content.classList.remove('hidden');
+            icon.classList.add('rotate-180'); // Gira o ícone de seta
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
