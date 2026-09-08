@@ -1,612 +1,801 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Base de Conhecimento | iTicket CX</title>
-  
-  <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Ícones Lucide -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
-</head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col">
 
-  <!-- Header / Navegação -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2 text-indigo-600 font-bold text-xl tracking-tight">
-        <i data-lucide="headphones" class="w-6 h-6"></i>
-        <span>Suporte<span class="text-slate-900">CX</span></span>
-      </a>
-
-      <nav class="flex items-center gap-4 sm:gap-6">
-        <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Início</a>
-        <a href="meus-chamados.html" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Meus Chamados</a>
-        <a href="novo-ticket.html" class="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-all shadow-sm">
-          <i data-lucide="plus-circle" class="w-4 h-4"></i>
-          <span>Abrir Ticket</span>
-        </a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Busca Secundária -->
-  <div class="bg-indigo-950 py-10 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-2xl sm:text-3xl font-bold text-white mb-3">Manuais e Tutoriais do Sistema iTicket</h1>
-      <p class="text-indigo-200 text-sm sm:text-base mb-6">Aprenda a configurar seu estabelecimento, gerenciar produtos, auditar financeiro e utilizar o KDS.</p>
-      
-      <div class="relative max-w-2xl mx-auto">
-        <i data-lucide="search" class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
-        <input 
-          type="search" 
-          id="faqSearchInput"
-          placeholder="Busque por artigos (ex: cadastro de produto, KDS, gorjeta, estoque)..." 
-          class="w-full pl-12 pr-4 py-3.5 rounded-xl text-slate-900 bg-white shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm sm:text-base"
-        >
-      </div>
-    </div>
-  </div>
-
-  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full flex flex-col md:flex-row gap-8">
-    
-    <!-- Sidebar de Navegação Rápida -->
-    <aside class="w-full md:w-64 flex-shrink-0">
-      <div class="sticky top-24 space-y-1 bg-white p-4 border border-slate-200 rounded-xl shadow-sm">
-        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 px-2">Categorias de Ajuda</h3>
-        <nav class="flex flex-col gap-1 text-sm font-medium">
-          <a href="#configuracoes" class="px-3 py-2 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 transition-colors flex items-center gap-2">
-            <i data-lucide="settings" class="w-4 h-4 text-indigo-600"></i> Configurações da Loja
-          </a>
-          <a href="#equipe" class="px-3 py-2 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 transition-colors flex items-center gap-2">
-            <i data-lucide="users" class="w-4 h-4 text-indigo-600"></i> Equipe e Permissões
-          </a>
-          <a href="#produtos-cardapio" class="px-3 py-2 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 transition-colors flex items-center gap-2">
-            <i data-lucide="utensils" class="w-4 h-4 text-indigo-600"></i> Produtos & Cardápio
-          </a>
-          <a href="#financeiro" class="px-3 py-2 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 transition-colors flex items-center gap-2">
-            <i data-lucide="wallet" class="w-4 h-4 text-indigo-600"></i> Financeiro & Recebimento
-          </a>
-          <a href="#relatorios" class="px-3 py-2 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 transition-colors flex items-center gap-2">
-            <i data-lucide="bar-chart-3" class="w-4 h-4 text-indigo-600"></i> Relatórios de Vendas
-          </a>
-          <a href="#operacao-kds" class="px-3 py-2 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 transition-colors flex items-center gap-2">
-            <i data-lucide="chef-hat" class="w-4 h-4 text-indigo-600"></i> Operação & Cozinha (KDS)
-          </a>
-        </nav>
-      </div>
-    </aside>
-
-    <!-- Conteúdo da Base de Conhecimento -->
-    <section class="flex-grow bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-sm space-y-12">
-      
-      <!-- SEÇÃO 1: CONFIGURAÇÕES -->
-      <div id="configuracoes" class="scroll-mt-24">
-        <div class="flex items-center gap-3 mb-6 pb-3 border-b border-slate-200">
-          <div class="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
-            <i data-lucide="settings" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h2 class="text-xl font-bold text-slate-900">Configurações e Identidade Visual</h2>
-            <p class="text-xs text-slate-500">Defina o endereço, horários de funcionamento e regras da operação.</p>
-          </div>
-        </div>
-
-        <div class="space-y-4">
-          <!-- Artigo 1 -->
-          <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
-            <button class="accordion-header w-full px-5 py-4 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors">
-              <span class="font-semibold text-slate-800 text-base">Como preencher as Informações Gerais e Identidade Visual</span>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
-            </button>
-            <div class="accordion-content hidden px-5 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 bg-white pt-4 space-y-4">
-              
-              <!-- BLOCOS DE VÍDEO EDITÁVEL -->
-              <div class="my-4">
-                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">Vídeo Tutorial</span>
-                <div class="aspect-video w-full bg-slate-900 rounded-xl overflow-hidden shadow-sm flex items-center justify-center text-slate-400">
-                  <!-- PARA ADICIONAR SEU VÍDEO: Substitua a tag abaixo pelo seu <iframe> do YouTube/Loom ou tag <video> -->
-                  <iframe class="w-full h-full" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" title="Tutorial de Identidade Visual" frameborder="0" allowfullscreen></iframe>
-                </div>
-              </div>
-
-              <p>O menu <strong>Configurações</strong> é onde você define a identidade, regras e o funcionamento base do seu estabelecimento[cite: 1].</p>
-              
-              <p class="font-semibold text-slate-800">Pré-requisitos:</p>
-              <ul class="list-disc pl-5 space-y-1 text-slate-600">
-                <li>Logotipo da empresa (PNG ou JPG)[cite: 1].</li>
-                <li>Imagem de capa do local[cite: 1].</li>
-                <li>Endereço completo com CEP e horários de atendimento[cite: 1].</li>
-              </ul>
-
-              <p class="font-semibold text-slate-800">Passo a Passo:</p>
-              <ol class="list-decimal pl-5 space-y-2">
-                <li><strong>Acessar Configurações:</strong> No menu lateral esquerdo do Dashboard, clique no ícone de engrenagem (Configurações)[cite: 1].</li>
-                <li><strong>Preencher dados básicos:</strong> Insira o Nome do Evento/Loja, CEP, Cidade, Endereço completo e defina os Horários de Funcionamento para que o sistema altere automaticamente o status para "Aberto" ou "Fechado"[cite: 1].</li>
-                <li><strong>Adicionar Logo e Capa:</strong> Na seção de imagens, faça o upload da Foto de Perfil (logotipo para cupons e menus digitais) e da Foto de Capa[cite: 1]. Clique em <strong>Salvar</strong>[cite: 1].</li>
-              </ol>
-
-              <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg mt-4">
-                <p class="text-xs font-bold text-amber-900 uppercase flex items-center gap-1">
-                  <i data-lucide="sparkles" class="w-4 h-4 text-amber-600"></i> Dica de Ouro
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#eceef0", "on-background": "#191c1e", "on-surface-variant": "#5d3f43", "surface-container-low": "#f2f4f6", "surface-dim": "#d8dadc", "error-container": "#ffdad6", "on-secondary-fixed": "#001453", "on-primary": "#ffffff", "primary-fixed": "#ffd9dd", "surface-container-high": "#e6e8ea", "primary-fixed-dim": "#ffb2bd", "on-error-container": "#93000a", "secondary-container": "#708cfd", "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#005225", "secondary": "#3755c3", "on-secondary-fixed-variant": "#173bab", "outline": "#926e72", "on-tertiary": "#ffffff", "on-tertiary-fixed": "#00210b", "on-error": "#ffffff", "secondary-fixed": "#dde1ff", "tertiary": "#006b32", "surface-variant": "#e0e3e5", "on-primary-container": "#fffbff", "surface-tint": "#bd0049", "on-secondary-container": "#00217a", "inverse-primary": "#ffb2bd", "on-surface": "#191c1e", "primary-container": "#e6005b", "on-primary-fixed-variant": "#900036", "on-primary-fixed": "#400013", "surface-bright": "#f7f9fb", "background": "#f7f9fb", "on-tertiary-container": "#f7fff3", "surface-container-highest": "#e0e3e5", "inverse-surface": "#2d3133", "tertiary-container": "#008741", "outline-variant": "#e6bcc1", "tertiary-fixed": "#83fba1", "on-secondary": "#ffffff", "tertiary-fixed-dim": "#66de87", "secondary-fixed-dim": "#b8c4ff", "surface": "#f7f9fb", "error": "#ba1a1a", "inverse-on-surface": "#eff1f3", "primary": "#b80047" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "sm": "16px", "gutter": "24px", "margin-mobile": "16px", "base": "4px", "xl": "64px", "container-max": "1200px", "lg": "40px", "md": "24px", "xs": "8px" }, "fontFamily": { "headline-md": [ "Hanken Grotesk" ], "body-md": [ "Hanken Grotesk" ], "headline-lg": [ "Hanken Grotesk" ], "body-lg": [ "Hanken Grotesk" ], "headline-xl": [ "Hanken Grotesk" ], "label-md": [ "Hanken Grotesk" ], "headline-lg-mobile": [ "Hanken Grotesk" ] }, "fontSize": { "headline-md": [ "24px", { "lineHeight": "32px", "fontWeight": "600" } ], "body-md": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "headline-xl": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "label-md": [ "14px", { "lineHeight": "20px", "fontWeight": "500" } ], "headline-lg-mobile": [ "28px", { "lineHeight": "36px", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-surface-container-high shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-lg"><div class="flex items-center gap-xs"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary font-headline-md text-headline-md">iT</div><span class="font-headline-md text-headline-md tracking-tight text-on-surface">iTicket <span class="text-primary">Help</span></span></div><nav class="hidden lg:flex items-center gap-md" data-active-classes="text-primary font-headline-md"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="inicio" href="#">Início</a><a aria-current="page" class="transition-colors text-primary font-headline-md" data-path="categorias" href="#">Categorias</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="meus-chamados" href="#">Meus Chamados</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="status-sistema" href="#">Status dos Serviços</a></nav></div><div class="flex items-center gap-sm"><div class="hidden md:flex items-center gap-xs px-xs py-base rounded-full bg-surface-container-low text-tertiary font-label-md text-label-md"><span class="w-2 h-2 rounded-full bg-tertiary inline-block animate-pulse"></span><span>Sistemas 100% Operacionais</span></div><a class="inline-flex items-center gap-xs bg-primary text-on-primary font-label-md text-label-md px-md py-xs rounded-lg hover:bg-primary-container transition-all shadow-[0_2px_8px_rgba(184,0,71,0.2)]" data-path="abrir-ticket" href="#"><span class="material-symbols-outlined text-[18px]">add_task</span><span>Abrir Ticket</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-72 bg-surface-container-lowest border-r border-surface-container-high z-40 flex flex-col justify-between overflow-y-auto"><div class="p-md"><div class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-sm px-xs">Manuais &amp; Tutoriais</div><nav class="space-y-base" data-active-classes="bg-primary-fixed text-on-primary-fixed font-headline-md"><a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" data-path="configuracoes-da-loja" href="#"><span class="material-symbols-outlined text-[20px]">store</span><span>Configurações da Loja</span></a><a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" data-path="equipe-e-permissoes" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span>Equipe e Permissões</span></a><a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" data-path="produtos-e-cardapio" href="#"><span class="material-symbols-outlined text-[20px]">restaurant_menu</span><span>Produtos &amp; Cardápio</span></a><a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" data-path="financeiro-e-recebimento" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span>Financeiro &amp; Recebimento</span></a><a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" data-path="relatorios-de-vendas" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span><span>Relatórios de Vendas</span></a><a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" data-path="operacao-e-cozinha-kds" href="#"><span class="material-symbols-outlined text-[20px]">soup_kitchen</span><span>Operação &amp; Cozinha (KDS)</span></a></nav></div><div class="p-md border-t border-surface-container"><div class="bg-surface-container-low p-sm rounded-xl"><div class="font-label-md text-label-md text-on-surface mb-xs flex items-center gap-xs"><span class="material-symbols-outlined text-secondary text-[18px]">live_help</span>Precisa de ajuda urgente?</div><p class="font-body-md text-[13px] text-on-surface-variant mb-xs">Nossa equipe de suporte está disponível via chat em tempo real.</p><a class="text-secondary hover:text-on-secondary-fixed-variant font-label-md text-[13px] flex items-center gap-xs" data-path="falar-com-suporte" href="#">Falar com analista <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a></div></div></aside><div class="pl-72 flex flex-col flex-1 min-h-screen"><main class="flex-1 pt-16 px-gutter bg-surface"><div class="flex flex-col w-full">
+<!-- Search & Quick Navigation Banner -->
+<section class="relative bg-surface-container-lowest py-lg px-gutter rounded-xl shadow-sm mb-lg overflow-hidden">
+<div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-secondary/5 blur-3xl pointer-events-none"></div>
+<div class="relative max-w-4xl mx-auto text-center flex flex-col items-center">
+<div class="inline-flex items-center gap-xs px-sm py-base bg-primary-fixed text-on-primary-fixed font-label-md text-label-md rounded-full mb-sm">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+<span>Base de Conhecimento Oficial iTicket</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight mb-xs">
+        Manuais e Tutoriais do Sistema iTicket
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-md">
+        Aprenda a configurar seu estabelecimento, gerenciar produtos, auditar financeiro e utilizar o KDS.
+      </p>
+<!-- Search Input Container -->
+<div class="w-full relative shadow-[0_4px_24px_rgba(0,0,0,0.06)] rounded-xl bg-surface-container-lowest">
+<div class="flex items-center h-16 px-md bg-surface-container-low rounded-xl focus-within:bg-surface-container-lowest focus-within:shadow-[0_0_0_2px_#3755c3] transition-all">
+<span class="material-symbols-outlined text-secondary text-[26px] mr-xs">search</span>
+<input class="w-full bg-transparent border-none text-on-surface placeholder:text-on-surface-variant/70 font-body-md text-body-md focus:outline-none" id="faq-search" placeholder="Busque por artigos (ex: cadastro de produto, KDS, gorjeta, estoque)..." type="text"/>
+<button class="hidden text-on-surface-variant hover:text-on-surface" id="clear-search">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- Quick Chips -->
+<div class="flex flex-wrap items-center justify-center gap-xs mt-sm">
+<span class="font-label-md text-label-md text-on-surface-variant mr-xs">Popular:</span>
+<button class="quick-chip px-sm py-base rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md hover:bg-secondary hover:text-on-secondary transition-colors" data-term="Cardápio">Configurar Cardápio</button>
+<button class="quick-chip px-sm py-base rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md hover:bg-secondary hover:text-on-secondary transition-colors" data-term="KDS">KDS Cozinha</button>
+<button class="quick-chip px-sm py-base rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md hover:bg-secondary hover:text-on-secondary transition-colors" data-term="Fechamento">Fechamento de Turno</button>
+<button class="quick-chip px-sm py-base rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md hover:bg-secondary hover:text-on-secondary transition-colors" data-term="Financeiro">PagBank &amp; Taxas</button>
+</div>
+</div>
+</section>
+<!-- Quick Category Bar with live jump and counter stats -->
+<section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-xs mb-lg">
+<a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#configuracoes">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
+<span class="material-symbols-outlined text-[22px]">storefront</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface line-clamp-1">Identidade Visual</span>
+<span class="font-label-md text-[12px] text-on-surface-variant">2 artigos</span>
+</a>
+<a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#equipe">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface line-clamp-1">Gestão de Equipe</span>
+<span class="font-label-md text-[12px] text-on-surface-variant">4 perfis</span>
+</a>
+<a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#produtos">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
+<span class="material-symbols-outlined text-[22px]">restaurant_menu</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface line-clamp-1">Produtos &amp; Cardápio</span>
+<span class="font-label-md text-[12px] text-on-surface-variant">3 artigos</span>
+</a>
+<a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#financeiro">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
+<span class="material-symbols-outlined text-[22px]">payments</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface line-clamp-1">Financeiro &amp; Caixa</span>
+<span class="font-label-md text-[12px] text-on-surface-variant">3 artigos</span>
+</a>
+<a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#relatorios">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
+<span class="material-symbols-outlined text-[22px]">analytics</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface line-clamp-1">Relatórios Vendas</span>
+<span class="font-label-md text-[12px] text-on-surface-variant">3 artigos</span>
+</a>
+<a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#kds">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
+<span class="material-symbols-outlined text-[22px]">soup_kitchen</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface line-clamp-1">Operação &amp; KDS</span>
+<span class="font-label-md text-[12px] text-on-surface-variant">Ao Vivo</span>
+</a>
+</section>
+<!-- FAQ Knowledge Container -->
+<div class="space-y-lg mb-xl">
+<!-- 1. Configurações e Identidade Visual -->
+<article class="faq-category-card bg-surface-container-lowest rounded-xl p-md shadow-sm" id="configuracoes">
+<header class="flex items-start gap-md mb-md">
+<div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">settings</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-xs">
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Módulo 01</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Configurações e Identidade Visual</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Defina o endereço, horários de funcionamento e regras da operação.</p>
+</div>
+</header>
+<div class="space-y-sm">
+<!-- Topic 1 (Expanded by default) -->
+<div class="faq-item rounded-lg bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<span class="font-headline-md text-headline-md text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">check_circle</span>
+              Como preencher as Informações Gerais e Identidade Visual
+            </span>
+<span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300 rotate-180">expand_more</span>
+</button>
+<div class="faq-content p-md pt-0">
+<div class="bg-surface-container-lowest rounded-lg p-md space-y-md">
+<div class="flex flex-wrap items-center justify-between gap-sm pb-xs">
+<div class="inline-flex items-center gap-xs px-sm py-base rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">play_circle</span>
+<span>Vídeo Tutorial Incluído</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Tempo estimado: 3 min</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                O menu <strong class="text-primary font-bold">Configurações</strong> é onde você define a identidade, regras e o funcionamento base do seu estabelecimento.
+              </p>
+<!-- Image Mockup / Visual Placeholder -->
+<div class="w-full h-56 rounded-xl overflow-hidden shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="Modern point of sale SaaS dashboard settings page showing company logo upload, business hours schedule, and store identity preview in crisp light mode palette with pink accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQNu4pG54xeu41DPE9Lptk4WCLa_9E7NHrVJbH5U_diuPGmgN4OnTC03iIbxTNpvU-FOS-6CjwJNi0KlwBXIfFqL3Pe5YCbsCzE5pYDTPzoEIQlAkkibZWig9NKzKyJRXGpJ_P3OHqpzfYyxdxl-QIO65pqPNxsWQrBcntfdXYnYn8cokPGJybjY6fW-NGtaXMQAJF6qJVr3T4PSyGQZe2md4lOmG8TyvDV5-iGCVsUmk8E_y01yns"/>
+</div>
+<!-- Pré-requisitos -->
+<div class="bg-surface-container-low rounded-lg p-sm">
+<h4 class="font-label-md text-label-md text-on-surface font-bold mb-xs flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">rule</span>
+                  Pré-requisitos:
+                </h4>
+<ul class="space-y-base text-on-surface font-body-md text-body-md">
+<li class="flex items-center gap-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Logotipo da empresa (PNG ou JPG com fundo transparente recomendado).
+                  </li>
+<li class="flex items-center gap-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Imagem de capa do local (ideal proporção horizontal 16:9).
+                  </li>
+<li class="flex items-center gap-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Endereço completo com CEP e horários de atendimento atualizados.
+                  </li>
+</ul>
+</div>
+<!-- Passo a Passo -->
+<div class="space-y-sm">
+<h4 class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider">Passo a Passo:</h4>
+<ol class="space-y-sm font-body-md text-body-md text-on-surface">
+<li class="flex items-start gap-sm">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-sm flex items-center justify-center shrink-0">1</span>
+<div>
+<strong>Acessar Configurações:</strong> No menu lateral esquerdo do Dashboard, clique no ícone de engrenagem (Configurações).
+                    </div>
+</li>
+<li class="flex items-start gap-sm">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-sm flex items-center justify-center shrink-0">2</span>
+<div>
+<strong>Preencher dados básicos:</strong> Insira o Nome do Evento/Loja, CEP, Cidade, Endereço completo e defina os Horários de Funcionamento para que o sistema altere automaticamente o status para "Aberto" ou "Fechado".
+                    </div>
+</li>
+<li class="flex items-start gap-sm">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-sm flex items-center justify-center shrink-0">3</span>
+<div>
+<strong>Adicionar Logo e Capa:</strong> Na seção de imagens, faça o upload da Foto de Perfil (logotipo para cupons e menus digitais) e da Foto de Capa. Clique em <strong class="text-primary">Salvar</strong>.
+                    </div>
+</li>
+</ol>
+</div>
+<!-- Dica de Ouro -->
+<div class="bg-primary-fixed/40 rounded-xl p-md flex items-start gap-sm">
+<div class="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-primary-fixed mb-base">Dica de Ouro</div>
+<p class="font-body-md text-body-md text-on-surface">
+                    Mantenha os horários de funcionamento sempre atualizados para evitar que clientes façam pedidos online fora do expediente!
+                  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Topic 2 -->
+<div class="faq-item rounded-lg bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<span class="font-headline-md text-headline-md text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">kitchen</span>
+              Como configurar as Regras de Operação e Pedidos (KDS e QR Code)
+            </span>
+<span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden p-md pt-0">
+<div class="bg-surface-container-lowest rounded-lg p-md space-y-md">
+<p class="font-body-md text-body-md text-on-surface">
+                Ajuste as configurações para definir o fluxo de pedidos até a cozinha e o modo de interação dos clientes no salão:
+              </p>
+<div class="grid md:grid-cols-3 gap-sm">
+<div class="bg-surface-container-low p-sm rounded-lg">
+<span class="material-symbols-outlined text-primary text-[24px] mb-xs">bolt</span>
+<h5 class="font-label-md text-label-md font-bold text-on-surface mb-xs">Envio automático para a cozinha</h5>
+<p class="font-body-md text-[14px] text-on-surface-variant">Ao ativar, os pedidos de pratos e bebidas são encaminhados diretamente para o KDS assim que o pagamento for confirmado.</p>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg">
+<span class="material-symbols-outlined text-tertiary text-[24px] mb-xs">chat</span>
+<h5 class="font-label-md text-label-md font-bold text-on-surface mb-xs">Avisar cliente via WhatsApp/SMS</h5>
+<p class="font-body-md text-[14px] text-on-surface-variant">Envia notificação automática ao cliente quando a cozinha altera o status para "Pronto".</p>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[24px] mb-xs">qr_code_scanner</span>
+<h5 class="font-label-md text-label-md font-bold text-on-surface mb-xs">Pedidos na Mesa via QR Code</h5>
+<p class="font-body-md text-[14px] text-on-surface-variant">Defina se o cliente poderá pedir de forma autônoma pelo celular ou se o código funcionará apenas como visualizador de cardápio.</p>
+</div>
+</div>
+<!-- Dica de Ouro -->
+<div class="bg-primary-fixed/40 rounded-xl p-md flex items-start gap-sm">
+<div class="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-primary-fixed mb-base">Dica de Ouro</div>
+<p class="font-body-md text-body-md text-on-surface">
+                    Caso seu estabelecimento opere apenas em formato de exposição (sem pagamentos online), ative a opção <strong>Apenas Cardápio Digital</strong> para criar uma vitrine virtual intuitiva.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- 2. Gestão de Equipe & Perfis de Acesso -->
+<article class="faq-category-card bg-surface-container-lowest rounded-xl p-md shadow-sm" id="equipe">
+<header class="flex items-start gap-md mb-md">
+<div class="w-12 h-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">group</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-xs">
+<span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Módulo 02</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Gestão de Equipe &amp; Perfis de Acesso</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Cadastre colaboradores e defina quais telas cada função pode visualizar.</p>
+</div>
+</header>
+<div class="faq-item rounded-lg bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<span class="font-headline-md text-headline-md text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">lock_person</span>
+            Como cadastrar colaboradores e escolher o Perfil de Acesso
+          </span>
+<span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden p-md pt-0">
+<div class="bg-surface-container-lowest rounded-lg p-md space-y-md">
+<h4 class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider">Guia de Perfis e Permissões:</h4>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-sm">
+<div class="p-sm bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-xs mb-xs">
+<span class="text-[20px]">👑</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Admin (Gestor/Dono)</span>
+</div>
+<p class="font-body-md text-[13px] text-on-surface-variant">Acesso total ao sistema, módulo financeiro, alteração de preços e estornos.</p>
+</div>
+<div class="p-sm bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-xs mb-xs">
+<span class="text-[20px]">🍺</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Bar</span>
+</div>
+<p class="font-body-md text-[13px] text-on-surface-variant">Acesso à página inicial e estoque para acompanhar bebidas. Não altera preços nem vê financeiro.</p>
+</div>
+<div class="p-sm bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-xs mb-xs">
+<span class="text-[20px]">🍳</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Cozinha (KDS)</span>
+</div>
+<p class="font-body-md text-[13px] text-on-surface-variant">Acesso exclusivo à tela de produção do tablet para visualizar a fila e dar baixa nos pratos.</p>
+</div>
+<div class="p-sm bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-xs mb-xs">
+<span class="text-[20px]">💳</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Caixa / Garçom</span>
+</div>
+<p class="font-body-md text-[13px] text-on-surface-variant">Permite logar no app iTicket Bar para realizar vendas na maquininha, lançar comandas e validar fichas.</p>
+</div>
+</div>
+<!-- Passo a Passo -->
+<div class="space-y-sm">
+<h4 class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider">Passo a Passo para Cadastrar:</h4>
+<ol class="space-y-sm font-body-md text-body-md text-on-surface">
+<li class="flex items-start gap-sm">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-sm flex items-center justify-center shrink-0">1</span>
+<div>No menu lateral, acesse <strong>Colaboradores</strong> e clique no botão <strong class="text-primary">+ Cadastrar</strong>.</div>
+</li>
+<li class="flex items-start gap-sm">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-sm flex items-center justify-center shrink-0">2</span>
+<div>Preencha Nome, E-mail, CPF e Celular.</div>
+</li>
+<li class="flex items-start gap-sm">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-sm flex items-center justify-center shrink-0">3</span>
+<div>No campo <strong>Tipo</strong>, defina entre <em>Fixo</em> (equipe da casa) ou <em>Freelancer</em> (diárias).</div>
+</li>
+<li class="flex items-start gap-sm">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-sm flex items-center justify-center shrink-0">4</span>
+<div>Selecione a <strong>Função</strong> (Admin, Bar, Cozinha ou Caixa) e clique em <strong>Salvar</strong>.</div>
+</li>
+</ol>
+</div>
+<!-- Dica de Ouro -->
+<div class="bg-primary-fixed/40 rounded-xl p-md flex items-start gap-sm">
+<div class="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-primary-fixed mb-base">Dica de Ouro</div>
+<p class="font-body-md text-body-md text-on-surface">
+                  Nunca compartilhe a senha do usuário Admin com operadores da pista. O sistema solicitará pontualmente o PIN/senha do administrador na tela para ações restritas (ex: estornos).
                 </p>
-                <p class="text-xs text-amber-800 mt-1">Mantenha os horários de funcionamento sempre atualizados para evitar que clientes façam pedidos online fora do expediente![cite: 1]</p>
-              </div>
-            </div>
-          </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- 3. Produtos, Estoque & Cardápio Digital -->
+<article class="faq-category-card bg-surface-container-lowest rounded-xl p-md shadow-sm" id="produtos">
+<header class="flex items-start gap-md mb-md">
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">restaurant_menu</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-xs">
+<span class="font-label-md text-label-md text-tertiary font-bold uppercase tracking-wider">Módulo 03</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Produtos, Estoque &amp; Cardápio Digital</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Cadastre itens, organize abas, ajuste estoque e regras de preparo.</p>
+</div>
+</header>
+<div class="space-y-sm">
+<!-- Topic 1 -->
+<div class="faq-item rounded-lg bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<span class="font-headline-md text-headline-md text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-tertiary text-[22px]">add_circle</span>
+              Como cadastrar novos produtos e definir regras de preparo
+            </span>
+<span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden p-md pt-0">
+<div class="bg-surface-container-lowest rounded-lg p-md space-y-md">
+<h4 class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider">Tipos de Produtos:</h4>
+<div class="grid md:grid-cols-3 gap-sm">
+<div class="p-sm bg-surface-container-low rounded-lg">
+<span class="font-label-md text-label-md font-bold text-on-surface">Consumo</span>
+<p class="font-body-md text-[14px] text-on-surface-variant">Produtos vendidos diretamente ao cliente (ex: refrigerante, água).</p>
+</div>
+<div class="p-sm bg-surface-container-low rounded-lg">
+<span class="font-label-md text-label-md font-bold text-on-surface">Insumo</span>
+<p class="font-body-md text-[14px] text-on-surface-variant">Ingredientes usados para fabricar receitas (ex: gelo, limão).</p>
+</div>
+<div class="p-sm bg-surface-container-low rounded-lg">
+<span class="font-label-md text-label-md font-bold text-on-surface">Ambos</span>
+<p class="font-body-md text-[14px] text-on-surface-variant">Itens vendidos sozinhos que também servem de ingrediente para receitas (ex: dose de vodka).</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl">
+<h5 class="font-label-md text-label-md font-bold text-on-surface mb-xs flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">smart_toy</span>
+                  Regras de Preparo e Fisco (com Botão IA):
+                </h5>
+<p class="font-body-md text-body-md text-on-surface">
+                  Se o item precisa ser montado na hora, marque a opção <strong>Produto de Preparo</strong>, escolha o setor de destino (Cozinha/Bar) e o tempo estimado em minutos. Utilize o botão <span class="inline-flex items-center gap-xs px-xs py-base bg-secondary text-on-secondary rounded font-label-md text-xs">Preencher com IA</span> para carregar os códigos fiscais (NCM) automaticamente.
+                </p>
+</div>
+<div class="bg-primary-fixed/40 rounded-xl p-md flex items-start gap-sm">
+<div class="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-primary-fixed mb-base">Dica de Ouro</div>
+<p class="font-body-md text-body-md text-on-surface">
+                    Se o seu produto cobra taxa de embalagem para pedidos para viagem, marque a caixa <strong>Para Viagem</strong> e preencha o valor adicional.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Topic 2 -->
+<div class="faq-item rounded-lg bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<span class="font-headline-md text-headline-md text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-tertiary text-[22px]">inventory_2</span>
+              Gerenciando o Estoque: Pausar itens esgotados e edição em massa
+            </span>
+<span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden p-md pt-0">
+<div class="bg-surface-container-lowest rounded-lg p-md space-y-md">
+<ul class="space-y-sm font-body-md text-body-md text-on-surface">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">toggle_on</span>
+<div><strong>Pausar item no meio do expediente:</strong> Localize o produto no Estoque e clique no botão de alternância (chavinha rosa) na coluna Ativar/Inativar. O item sumirá da maquininha e do cardápio digital na hora.</div>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-error text-[20px]">warning</span>
+<div><strong>Alerta de Estoque Mínimo:</strong> Defina uma quantidade limite ao cadastrar um item. O sistema exibirá um aviso visual de "Estoque Baixo" quando as vendas atingirem a margem.</div>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">playlist_add_check</span>
+<div><strong>Editar em Massa:</strong> Selecione as caixas de seleção ao lado dos produtos e clique no botão <strong>Editar Estoque</strong> para ajustar quantidades de vários itens de uma só vez.</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Topic 3 -->
+<div class="faq-item rounded-lg bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<span class="font-headline-md text-headline-md text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-tertiary text-[22px]">drag_indicator</span>
+              Como organizar Abas (Categorias) e reordenar o Cardápio por Arrastar-e-Soltar
+            </span>
+<span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden p-md pt-0">
+<div class="bg-surface-container-lowest rounded-lg p-md space-y-md">
+<p class="font-body-md text-body-md text-on-surface">
+                Acesse <strong>Produtos &gt; Cardápio</strong>. Para reorganizar a apresentação das maquininhas e do QR Code:
+              </p>
+<ol class="space-y-sm font-body-md text-body-md text-on-surface">
+<li class="flex items-start gap-sm">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-sm flex items-center justify-center shrink-0">1</span>
+<div>Clique no botão <strong>+ Adicionar Aba</strong> para criar novas categorias (ex: "Bebidas", "Porções").</div>
+</li>
+<li class="flex items-start gap-sm">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-sm flex items-center justify-center shrink-0">2</span>
+<div>Clique sobre o cabeçalho de uma coluna e <strong>arraste para os lados</strong> para mudar a ordem das abas.</div>
+</li>
+<li class="flex items-start gap-sm">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-sm flex items-center justify-center shrink-0">3</span>
+<div>Clique em um produto e <strong>arraste para cima ou para baixo</strong> dentro da coluna para colocar os mais vendidos no topo.</div>
+</li>
+</ol>
+<div class="bg-primary-fixed/40 rounded-xl p-md flex items-start gap-sm">
+<div class="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-primary-fixed mb-base">Dica de Ouro</div>
+<p class="font-body-md text-body-md text-on-surface">
+                    Mantenha as categorias de maior fluxo de saída (como Cervejas e Drinks) nas primeiras posições da tela. Isso economiza toques na tela da maquininha e acelera o lançamento pelo garçom.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- 4. Financeiro, Pré-Autorizadas e Recebimento -->
+<article class="faq-category-card bg-surface-container-lowest rounded-xl p-md shadow-sm" id="financeiro">
+<header class="flex items-start gap-md mb-md">
+<div class="w-12 h-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">payments</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-xs">
+<span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Módulo 04</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Financeiro, Pré-Autorizadas e Recebimento</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Audite transações, monitore comandas abertas e acompanhe depósitos bancários.</p>
+</div>
+</header>
+<div class="space-y-sm">
+<div class="faq-item rounded-lg bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<span class="font-headline-md text-headline-md text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">receipt_long</span>
+              Como consultar, auditar e exportar Transações de vendas
+            </span>
+<span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden p-md pt-0">
+<div class="bg-surface-container-lowest rounded-lg p-md space-y-sm font-body-md text-body-md text-on-surface">
+<p>Em <strong>Financeiro &gt; Transações</strong>, você pode filtrar vendas por Nome do Cliente, Ambiente (Físico/Maquininha ou Online) e Período.</p>
+<p>Audite os status das compras selecionando entre <em>Aprovada</em> ou <em>Cancelada</em>, e clique no botão <strong>Exportar</strong> no canto superior para baixar uma planilha Excel/CSV com todos os dados.</p>
+</div>
+</div>
+</div>
+<div class="faq-item rounded-lg bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<span class="font-headline-md text-headline-md text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">credit_card</span>
+              Monitorando Pré-Autorizadas e limites retidos em comandas
+            </span>
+<span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden p-md pt-0">
+<div class="bg-surface-container-lowest rounded-lg p-md space-y-md font-body-md text-body-md text-on-surface">
+<p>Acesse <strong>Financeiro &gt; Pré-autorizadas</strong> para acompanhar:</p>
+<div class="grid md:grid-cols-3 gap-sm">
+<div class="bg-surface-container-low p-sm rounded-lg">
+<div class="font-label-md text-label-md font-bold text-on-surface mb-base">Total de Pré-autorizadas</div>
+<p class="font-body-md text-[13px] text-on-surface-variant">Número de clientes com comanda aberta no momento.</p>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg">
+<div class="font-label-md text-label-md font-bold text-on-surface mb-base">Valor Total Reservado</div>
+<p class="font-body-md text-[13px] text-on-surface-variant">Soma em dinheiro retida temporariamente nos cartões dos clientes.</p>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg">
+<div class="font-label-md text-label-md font-bold text-error mb-base">Alerta (&gt;8 horas)</div>
+<p class="font-body-md text-[13px] text-on-surface-variant">Sinaliza comandas abertas por tempo excessivo, identificando saídas sem fechamento.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="faq-item rounded-lg bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<span class="font-headline-md text-headline-md text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">account_balance</span>
+              Como acompanhar Recebimentos Bancários e Faturas de taxas
+            </span>
+<span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden p-md pt-0">
+<div class="bg-surface-container-lowest rounded-lg p-md space-y-sm font-body-md text-body-md text-on-surface">
+<p>Acesse <strong>Financeiro &gt; Recebimento</strong> para utilizar o "extrato bancário" do sistema:</p>
+<ul class="space-y-base">
+<li>• <strong>Faturamento Bruto vs. Recebimento Total:</strong> Compare o valor cheio das vendas contra o valor líquido real a ser depositado após descontos de taxas.</li>
+<li>• <strong>Data do Recebimento:</strong> Verifique o dia exato em que o dinheiro de cada turno cairá na sua conta corrente.</li>
+<li>• <strong>Detalhamento de Fatura:</strong> Clique no ícone de olho no final de cada linha para ver o desconto exato por meio de pagamento (Crédito, Débito, Pix) e adquirente.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- 5. Relatórios de Vendas e Fechamento -->
+<article class="faq-category-card bg-surface-container-lowest rounded-xl p-md shadow-sm" id="relatorios">
+<header class="flex items-start gap-md mb-md">
+<div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">analytics</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-xs">
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Módulo 05</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Relatórios de Vendas e Fechamento</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Analise turnos, produtividade da equipe, vendas por produto e comissões.</p>
+</div>
+</header>
+<div class="space-y-sm">
+<div class="faq-item rounded-lg bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<span class="font-headline-md text-headline-md text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">date_range</span>
+              Relatório por Período: Fechamento de turnos e cancelamentos
+            </span>
+<span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden p-md pt-0">
+<div class="bg-surface-container-lowest rounded-lg p-md space-y-md font-body-md text-body-md text-on-surface">
+<p>Funciona como seu diário de bordo diário. Em <strong>Relatório &gt; Por Período</strong>, filtre por operador, janela de data e analise os totalizadores:</p>
+<ul class="space-y-base">
+<li>• <strong>Valor Bruto &amp; Líquido:</strong> Faturamento total versus valor real descontado de taxas.</li>
+<li>• <strong>Fichas Validadas:</strong> Quantidade de QR Codes lidos/queimados na portaria ou balcão.</li>
+<li>• <strong>Formas de Pagamento:</strong> Clique na seta expansível da linha do turno para ver a divisão exata entre Dinheiro, Crédito, Débito e Pix.</li>
+</ul>
+<div class="bg-primary-fixed/40 rounded-xl p-md flex items-start gap-sm">
+<div class="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-primary-fixed mb-base">Dica de Ouro</div>
+<p class="font-body-md text-body-md text-on-surface">
+                    Acompanhe sempre a coluna <strong>Cancelado</strong>! Um volume elevado de estornos em um mesmo turno indica erro operacional na maquininha ou necessidade de auditoria.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="faq-item rounded-lg bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<span class="font-headline-md text-headline-md text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">person_celebrate</span>
+              Relatório por Colaborador: Produtividade e cálculo de comissões
+            </span>
+<span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden p-md pt-0">
+<div class="bg-surface-container-lowest rounded-lg p-md space-y-sm font-body-md text-body-md text-on-surface">
+<p>Em <strong>Relatório &gt; Por Colaborador</strong>, meça o desempenho individual do seu time para cálculo de comissões:</p>
+<div class="grid md:grid-cols-3 gap-sm pt-xs">
+<div class="p-sm bg-surface-container-low rounded-lg">
+<div class="font-label-md text-label-md font-bold text-on-surface">Qtd Transações</div>
+<div class="text-[13px] text-on-surface-variant">Passagens de cartão e vendas por garçom/caixa.</div>
+</div>
+<div class="p-sm bg-surface-container-low rounded-lg">
+<div class="font-label-md text-label-md font-bold text-on-surface">Qtd Validações</div>
+<div class="text-[13px] text-on-surface-variant">Entregas físicas de itens via leitura de ficha.</div>
+</div>
+<div class="p-sm bg-surface-container-low rounded-lg">
+<div class="font-label-md text-label-md font-bold text-on-surface">Valor Líquido</div>
+<div class="text-[13px] text-on-surface-variant">Base recomendada para regras de comissionamento.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="faq-item rounded-lg bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<span class="font-headline-md text-headline-md text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">point_of_sale</span>
+              Conferência de Maquininhas, Cupons de Desconto e Gorjetas
+            </span>
+<span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden p-md pt-0">
+<div class="bg-surface-container-lowest rounded-lg p-md space-y-sm font-body-md text-body-md text-on-surface">
+<p><strong>Fechamento de Maquininhas (Por Terminal):</strong> Faça a "conferência cega" das maquininhas físicas (PDVs móveis/caixas), garantindo que as vias de papel e recebimentos batam centavo por centavo com o relatório do sistema.</p>
+<p><strong>Relatório por Cupom:</strong> Acompanhe resgates de campanhas de marketing e clique no botão <em>Ver Produtos</em> para auditar se as regras de desconto não foram aplicadas em itens indevidos.</p>
+<p><strong>Taxa de Serviço / Gorjetas:</strong> Isole o valor arrecadado de taxa de serviço do faturamento bruto da casa para realizar o repasse/rateio preciso de gorjetas para a equipe.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- 6. Operação em Tempo Real & Cozinha (KDS) -->
+<article class="faq-category-card bg-surface-container-lowest rounded-xl p-md shadow-sm" id="kds">
+<header class="flex items-start gap-md mb-md">
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">soup_kitchen</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-xs">
+<span class="font-label-md text-label-md text-tertiary font-bold uppercase tracking-wider">Módulo 06</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Operação em Tempo Real &amp; Cozinha (KDS)</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Acompanhe picos de venda ao vivo e gerencie a fila de preparo de pratos e drinks.</p>
+</div>
+</header>
+<div class="faq-item rounded-lg bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
+<span class="font-headline-md text-headline-md text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-tertiary text-[22px]">desktop_windows</span>
+            Como utilizar o Painel Em Tempo Real e a Fila de Preparo (KDS)
+          </span>
+<span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden p-md pt-0">
+<div class="bg-surface-container-lowest rounded-lg p-md space-y-md">
+<div class="bg-surface-container-low p-md rounded-xl space-y-xs">
+<span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">speed</span>
+                Painel Em Tempo Real:
+              </span>
+<p class="font-body-md text-body-md text-on-surface">
+                Projetado para ficar aberto no balcão/gerência durante o expediente. Exibe total de transações, produtos entregues e gráfico com picos de vendas configuráveis por intervalos (ex: a cada 30 minutos).
+              </p>
+</div>
+<!-- KDS Tablet Simulator Visual -->
+<div class="w-full h-56 rounded-xl overflow-hidden shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="Kitchen Display System tablet interface showing food orders queued with countdown timers, clear ticket badges, and ready action buttons in a bright kitchen background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc6z1yiVXtwyGnVzUVtb3IlbCPLoQRZufa_FiIYE8cA3HEFr7uMBfrnF1fI5IVVcK5N2k7a56loiR6HzKMQS62wEnyN2Ezavr-GHSUA7YMfFHYCzUbOPSSzicj0EEWiowbxRIG5lYwBtCQKTzEHtMESd66V_94tmw8G_AnWMYIJ2CAXt4dMSarSleDQw_b2j7cdwfXy9M6KNUdrANUi_-ieausrssqny4AvgYOFPpm6AYq14BaxGJg"/>
+</div>
+<div class="space-y-sm">
+<h4 class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider">Tela da Cozinha / Bar (KDS):</h4>
+<ol class="space-y-sm font-body-md text-body-md text-on-surface">
+<li class="flex items-start gap-sm">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-sm flex items-center justify-center shrink-0">1</span>
+<div>Acesse o menu <strong>Preparo</strong> e filtre por praça (ex: "BARZIN") ou selecione <em>Todas as Filas</em>.</div>
+</li>
+<li class="flex items-start gap-sm">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-sm flex items-center justify-center shrink-0">2</span>
+<div>Leia no card do pedido a quantidade, observações em azul (ex: "Sem cebola", "Para viagem") e a identificação do cliente/mesa.</div>
+</li>
+<li class="flex items-start gap-sm">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-sm flex items-center justify-center shrink-0">3</span>
+<div>Acompanhe o cronômetro do <strong>Tempo em Andamento</strong> (alerta em vermelho para atrasos).</div>
+</li>
+<li class="flex items-start gap-sm">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-sm flex items-center justify-center shrink-0">4</span>
+<div>Quando o item estiver pronto, o cozinheiro clica no botão rosa <strong class="text-primary">PEDIDO PRONTO</strong> para remover da fila e notificar a equipe.</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Support CTA Banner (bottom) -->
+<section class="relative bg-gradient-to-br from-secondary-fixed/50 via-surface-container-lowest to-primary-fixed/30 rounded-xl p-lg shadow-sm mb-lg text-center overflow-hidden">
+<div class="relative max-w-2xl mx-auto flex flex-col items-center">
+<div class="w-14 h-14 rounded-2xl bg-secondary text-on-secondary flex items-center justify-center mb-sm shadow-md">
+<span class="material-symbols-outlined text-[32px]">support_agent</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-xs">
+        Ainda precisa de suporte técnico com a sua operação?
+      </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">
+        Nossos especialistas em CX podem te ajudar a configurar sua conta, maquininhas e impressoras remotamente.
+      </p>
+<div class="flex flex-wrap items-center justify-center gap-sm">
+<a class="inline-flex items-center gap-xs bg-primary text-on-primary font-headline-md text-body-md px-md py-sm rounded-lg hover:bg-primary-container transition-all shadow-[0_4px_16px_rgba(184,0,71,0.25)]" data-path="abrir-ticket" href="#">
+<span class="material-symbols-outlined text-[20px]">confirmation_number</span>
+<span>Abrir Chamado de Suporte</span>
+</a>
+<a class="inline-flex items-center gap-xs bg-surface-container-lowest text-secondary font-headline-md text-body-md px-md py-sm rounded-lg hover:bg-surface-container transition-all shadow-sm" data-path="falar-com-suporte" href="#">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Falar no WhatsApp</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+<script>
+  (function() {
+    // Accordion Toggle Interaction
+    const toggles = document.querySelectorAll('.faq-toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const content = toggle.nextElementSibling;
+        const icon = toggle.querySelector('.faq-icon');
+        const isHidden = content.classList.contains('hidden');
 
-          <!-- Artigo 2 -->
-          <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
-            <button class="accordion-header w-full px-5 py-4 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors">
-              <span class="font-semibold text-slate-800 text-base">Como configurar as Regras de Operação e Pedidos (KDS e QR Code)</span>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
-            </button>
-            <div class="accordion-content hidden px-5 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 bg-white pt-4 space-y-4">
-              
-              <div class="my-4">
-                <div class="aspect-video w-full bg-slate-900 rounded-xl overflow-hidden shadow-sm flex items-center justify-center text-slate-400">
-                  <!-- COLE SEU EMBED DE VÍDEO AQUI -->
-                  <iframe class="w-full h-full" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" title="Tutorial de Regras de Operação" frameborder="0" allowfullscreen></iframe>
-                </div>
-              </div>
-
-              <p>Ajuste as configurações para definir o fluxo de pedidos até a cozinha e o modo de interação dos clientes no salão[cite: 1].</p>
-              <ul class="list-disc pl-5 space-y-2">
-                <li><strong>Envio automático para a cozinha:</strong> Ao ativar, os pedidos de pratos e bebidas são encaminhados diretamente para o KDS assim que o pagamento for confirmado[cite: 1].</li>
-                <li><strong>Avisar cliente via WhatsApp/SMS:</strong> Envia notificação automática ao cliente quando a cozinha altera o status para "Pronto"[cite: 1].</li>
-                <li><strong>Pedidos na Mesa via QR Code:</strong> Defina se o cliente poderá pedir de forma autônoma pelo celular ou se o código funcionará apenas como visualizador de cardápio[cite: 1].</li>
-              </ul>
-
-              <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
-                <p class="text-xs font-bold text-amber-900 uppercase">Dica de Ouro</p>
-                <p class="text-xs text-amber-800 mt-1">Caso seu estabelecimento opere apenas em formato de exposição (sem pagamentos online), ative a opção <strong>Apenas Cardápio Digital</strong> para criar uma vitrine virtual intuitiva[cite: 1].</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SEÇÃO 2: EQUIPE E PERMISSÕES -->
-      <div id="equipe" class="scroll-mt-24">
-        <div class="flex items-center gap-3 mb-6 pb-3 border-b border-slate-200">
-          <div class="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
-            <i data-lucide="users" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h2 class="text-xl font-bold text-slate-900">Gestão de Equipe & Perfis de Acesso</h2>
-            <p class="text-xs text-slate-500">Cadastre colaboradores e defina quais telas cada função pode visualizar.</p>
-          </div>
-        </div>
-
-        <div class="space-y-4">
-          <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
-            <button class="accordion-header w-full px-5 py-4 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors">
-              <span class="font-semibold text-slate-800 text-base">Como cadastrar colaboradores e escolher o Perfil de Acesso</span>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
-            </button>
-            <div class="accordion-content hidden px-5 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 bg-white pt-4 space-y-4">
-              
-              <div class="my-4">
-                <div class="aspect-video w-full bg-slate-900 rounded-xl overflow-hidden shadow-sm flex items-center justify-center text-slate-400">
-                  <iframe class="w-full h-full" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" title="Cadastro de Colaboradores" frameborder="0" allowfullscreen></iframe>
-                </div>
-              </div>
-
-              <p class="font-semibold text-slate-800">Guia de Perfis e Permissões:</p>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg">
-                  <span class="font-bold text-indigo-600 block mb-1">👑 Admin (Gestor / Dono)</span>
-                  Acesso total ao sistema, módulo financeiro, alteração de preços e estornos[cite: 1].
-                </div>
-                <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg">
-                  <span class="font-bold text-indigo-600 block mb-1">🍺 Bar</span>
-                  Acesso à página inicial e estoque para acompanhar bebidas. Não altera preços nem vê financeiro[cite: 1].
-                </div>
-                <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg">
-                  <span class="font-bold text-indigo-600 block mb-1">🍳 Cozinha (KDS)</span>
-                  Acesso exclusivo à tela de produção do tablet para visualizar a fila e dar baixa nos pratos[cite: 1].
-                </div>
-                <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg">
-                  <span class="font-bold text-indigo-600 block mb-1">💳 Caixa / Garçom</span>
-                  Permite logar no app iTicket Bar para realizar vendas na maquininha, lançar comandas e validar fichas[cite: 1].
-                </div>
-              </div>
-
-              <p class="font-semibold text-slate-800 mt-2">Passo a Passo para Cadastrar:</p>
-              <ol class="list-decimal pl-5 space-y-1">
-                <li>No menu lateral, acesse <strong>Colaboradores</strong> e clique no botão <strong>+ Cadastrar</strong>[cite: 1].</li>
-                <li>Preencha Nome, E-mail, CPF e Celular[cite: 1].</li>
-                <li>No campo <strong>Tipo</strong>, defina entre <i>Fixo</i> (equipe da casa) ou <i>Freelancer</i> (diárias)[cite: 1].</li>
-                <li>Selecione a <strong>Função</strong> (Admin, Bar, Cozinha ou Caixa) e clique em <strong>Salvar</strong>[cite: 1].</li>
-              </ol>
-
-              <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
-                <p class="text-xs font-bold text-amber-900 uppercase">Dica de Ouro</p>
-                <p class="text-xs text-amber-800 mt-1">Nunca compartilhe a senha do usuário Admin com operadores da pista. O sistema solicitará pontualmente o PIN/senha do administrador na tela para ações restritas (ex: estornos)[cite: 1].</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SEÇÃO 3: PRODUÇÃO & CARDÁPIO -->
-      <div id="produtos-cardapio" class="scroll-mt-24">
-        <div class="flex items-center gap-3 mb-6 pb-3 border-b border-slate-200">
-          <div class="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
-            <i data-lucide="utensils" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h2 class="text-xl font-bold text-slate-900">Produtos, Estoque & Cardápio Digital</h2>
-            <p class="text-xs text-slate-500">Cadastre itens, organize abas, ajuste estoque e regras de preparo.</p>
-          </div>
-        </div>
-
-        <div class="space-y-4">
-          <!-- Artigo Cadastrar Produto -->
-          <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
-            <button class="accordion-header w-full px-5 py-4 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors">
-              <span class="font-semibold text-slate-800 text-base">Como cadastrar novos produtos e definir regras de preparo</span>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
-            </button>
-            <div class="accordion-content hidden px-5 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 bg-white pt-4 space-y-4">
-              
-              <div class="my-4">
-                <div class="aspect-video w-full bg-slate-900 rounded-xl overflow-hidden shadow-sm flex items-center justify-center text-slate-400">
-                  <iframe class="w-full h-full" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" title="Cadastro de Produtos" frameborder="0" allowfullscreen></iframe>
-                </div>
-              </div>
-
-              <p class="font-semibold text-slate-800">Tipos de Produtos:</p>
-              <ul class="list-disc pl-5 space-y-1">
-                <li><strong>Consumo:</strong> Produtos vendidos diretamente ao cliente (ex: refrigerante, água)[cite: 1].</li>
-                <li><strong>Insumo:</strong> Ingredientes usados para fabricar receitas (ex: gelo, limão)[cite: 1].</li>
-                <li><strong>Ambos:</strong> Itens vendidos sozinhos que também servem de ingrediente para receitas (ex: dose de vodka)[cite: 1].</li>
-              </ul>
-
-              <p class="font-semibold text-slate-800">Regras de Preparo e Fisco:</p>
-              <p>Se o item precisa ser montado na hora, marque a opção <strong>Produto de Preparo</strong>, escolha o setor de destino (Cozinha/Bar) e o tempo estimado em minutos[cite: 1]. Utilize o botão <strong>Preencher com IA</strong> para carregar os códigos fiscais (NCM) automaticamente[cite: 1].</p>
-
-              <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
-                <p class="text-xs font-bold text-amber-900 uppercase">Dica de Ouro</p>
-                <p class="text-xs text-amber-800 mt-1">Se o seu produto cobra taxa de embalagem para pedidos para viagem, marque a caixa <strong>Para Viagem</strong> e preencha o valor adicional[cite: 1].</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Artigo Gerenciar Estoque -->
-          <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
-            <button class="accordion-header w-full px-5 py-4 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors">
-              <span class="font-semibold text-slate-800 text-base">Gerenciando o Estoque: Pausar itens esgotados e edição em massa</span>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
-            </button>
-            <div class="accordion-content hidden px-5 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 bg-white pt-4 space-y-4">
-              
-              <div class="my-4">
-                <div class="aspect-video w-full bg-slate-900 rounded-xl overflow-hidden shadow-sm flex items-center justify-center text-slate-400">
-                  <iframe class="w-full h-full" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" title="Gerenciando Estoque" frameborder="0" allowfullscreen></iframe>
-                </div>
-              </div>
-
-              <ul class="list-disc pl-5 space-y-2">
-                <li><strong>Pausar item no meio do expediente:</strong> Localize o produto no Estoque e clique no botão de alternância (chavinha rosa) na coluna Ativar/Inativar[cite: 1]. O item sumirá da maquininha e do cardápio digital na hora[cite: 1].</li>
-                <li><strong>Alerta de Estoque Mínimo:</strong> Defina uma quantidade limite ao cadastrar um item. O sistema exibirá um aviso visual de "Estoque Baixo" quando as vendas atingirem a margem[cite: 1].</li>
-                <li><strong>Editar em Massa:</strong> Selecione as caixas de seleção ao lado dos produtos e clique no botão <strong>Editar Estoque</strong> para ajustar quantidades de vários itens de uma só vez[cite: 1].</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Artigo Cardápio / Abas -->
-          <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
-            <button class="accordion-header w-full px-5 py-4 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors">
-              <span class="font-semibold text-slate-800 text-base">Como organizar Abas (Categorias) e reordenar o Cardápio por Arrastar-e-Soltar</span>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
-            </button>
-            <div class="accordion-content hidden px-5 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 bg-white pt-4 space-y-4">
-              
-              <div class="my-4">
-                <div class="aspect-video w-full bg-slate-900 rounded-xl overflow-hidden shadow-sm flex items-center justify-center text-slate-400">
-                  <iframe class="w-full h-full" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" title="Organizando o Cardápio" frameborder="0" allowfullscreen></iframe>
-                </div>
-              </div>
-
-              <p>Acesse <strong>Produtos > Cardápio</strong>[cite: 1]. Para reorganizar a apresentação das maquininhas e do QR Code:</p>
-              <ol class="list-decimal pl-5 space-y-1">
-                <li>Clique no botão <strong>+ Adicionar Aba</strong> para criar novas categorias (ex: "Bebidas", "Porções")[cite: 1].</li>
-                <li>Clique sobre o cabeçalho de uma coluna e <strong>arraste para os lados</strong> para mudar a ordem das abas[cite: 1].</li>
-                <li>Clique em um produto e <strong>arraste para cima ou para baixo</strong> dentro da coluna para colocar os mais vendidos no topo[cite: 1].</li>
-              </ol>
-
-              <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
-                <p class="text-xs font-bold text-amber-900 uppercase">Dica de Ouro</p>
-                <p class="text-xs text-amber-800 mt-1">Mantenha as categorias de maior fluxo de saída (como Cervejas e Drinks) nas primeiras posições da tela[cite: 1]. Isso economiza toques na tela da maquininha e acelera o lançamento pelo garçom[cite: 1].</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SEÇÃO 4: FINANCEIRO & RECEBIMENTO -->
-      <div id="financeiro" class="scroll-mt-24">
-        <div class="flex items-center gap-3 mb-6 pb-3 border-b border-slate-200">
-          <div class="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
-            <i data-lucide="wallet" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h2 class="text-xl font-bold text-slate-900">Financeiro, Pré-Autorizadas e Recebimento</h2>
-            <p class="text-xs text-slate-500">Audite transações, monitore comandas abertas e acompanhe depósitos bancários.</p>
-          </div>
-        </div>
-
-        <div class="space-y-4">
-          <!-- Transações -->
-          <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
-            <button class="accordion-header w-full px-5 py-4 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors">
-              <span class="font-semibold text-slate-800 text-base">Como consultar, auditar e exportar Transações de vendas</span>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
-            </button>
-            <div class="accordion-content hidden px-5 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 bg-white pt-4 space-y-4">
-              
-              <div class="my-4">
-                <div class="aspect-video w-full bg-slate-900 rounded-xl overflow-hidden shadow-sm flex items-center justify-center text-slate-400">
-                  <iframe class="w-full h-full" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" title="Consulta de Transações" frameborder="0" allowfullscreen></iframe>
-                </div>
-              </div>
-
-              <p>Em <strong>Financeiro > Transações</strong>, você pode filtrar vendas por Nome do Cliente, Ambiente (Físico/Maquininha ou Online) e Período[cite: 1].</p>
-              <p>Audite os status das compras selecionando entre <i>Aprovada</i> ou <i>Cancelada</i>, e clique no botão <strong>Exportar</strong> no canto superior para baixar uma planilha Excel/CSV com todos os dados[cite: 1].</p>
-            </div>
-          </div>
-
-          <!-- Pré-Autorizadas -->
-          <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
-            <button class="accordion-header w-full px-5 py-4 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors">
-              <span class="font-semibold text-slate-800 text-base">Monitorando Pré-Autorizadas e limites retidos em comandas</span>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
-            </button>
-            <div class="accordion-content hidden px-5 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 bg-white pt-4 space-y-4">
-              
-              <div class="my-4">
-                <div class="aspect-video w-full bg-slate-900 rounded-xl overflow-hidden shadow-sm flex items-center justify-center text-slate-400">
-                  <iframe class="w-full h-full" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" title="Monitor de Pré-Autorizadas" frameborder="0" allowfullscreen></iframe>
-                </div>
-              </div>
-
-              <p>Acesse <strong>Financeiro > Pré-autorizadas</strong> para acompanhar[cite: 1]:</p>
-              <ul class="list-disc pl-5 space-y-1">
-                <li><strong>Total de Pré-autorizadas:</strong> Número de clientes com comanda aberta no momento[cite: 1].</li>
-                <li><strong>Valor Total Reservado:</strong> Soma em dinheiro retida temporariamente nos cartões dos clientes[cite: 1].</li>
-                <li><strong>Alerta (>8 horas):</strong> Sinaliza comandas abertas por tempo excessivo, ajudando a identificar se um cliente foi embora sem fechar a conta[cite: 1].</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Recebimento Bancário -->
-          <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
-            <button class="accordion-header w-full px-5 py-4 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors">
-              <span class="font-semibold text-slate-800 text-base">Como acompanhar Recebimentos Bancários e Faturas de taxas</span>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
-            </button>
-            <div class="accordion-content hidden px-5 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 bg-white pt-4 space-y-4">
-              
-              <div class="my-4">
-                <div class="aspect-video w-full bg-slate-900 rounded-xl overflow-hidden shadow-sm flex items-center justify-center text-slate-400">
-                  <iframe class="w-full h-full" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" title="Extrato e Recebimento" frameborder="0" allowfullscreen></iframe>
-                </div>
-              </div>
-
-              <p>Acesse <strong>Financeiro > Recebimento</strong> para utilizar o "extrato bancário" do sistema[cite: 1]:</p>
-              <ul class="list-disc pl-5 space-y-1">
-                <li><strong>Faturamento Bruto vs. Recebimento Total:</strong> Compare o valor cheio das vendas contra o valor líquido real a ser depositado após descontos de taxas[cite: 1].</li>
-                <li><strong>Data do Recebimento:</strong> Verifique o dia exato em que o dinheiro de cada turno cairá na sua conta corrente[cite: 1].</li>
-                <li><strong>Detalhamento de Fatura:</strong> Clique no ícone de olho no final de cada linha para ver o desconto exato por meio de pagamento (Crédito, Débito, Pix) e adquirente[cite: 1].</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SEÇÃO 5: RELATÓRIOS -->
-      <div id="relatorios" class="scroll-mt-24">
-        <div class="flex items-center gap-3 mb-6 pb-3 border-b border-slate-200">
-          <div class="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
-            <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h2 class="text-xl font-bold text-slate-900">Relatórios de Vendas e Fechamento</h2>
-            <p class="text-xs text-slate-500">Analise turnos, produtividade da equipe, vendas por produto e comissões.</p>
-          </div>
-        </div>
-
-        <div class="space-y-4">
-          <!-- Relatório por Período / Turno -->
-          <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
-            <button class="accordion-header w-full px-5 py-4 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors">
-              <span class="font-semibold text-slate-800 text-base">Relatório por Período: Fechamento de turnos e cancelamentos</span>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
-            </button>
-            <div class="accordion-content hidden px-5 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 bg-white pt-4 space-y-4">
-              
-              <div class="my-4">
-                <div class="aspect-video w-full bg-slate-900 rounded-xl overflow-hidden shadow-sm flex items-center justify-center text-slate-400">
-                  <iframe class="w-full h-full" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" title="Relatório por Período" frameborder="0" allowfullscreen></iframe>
-                </div>
-              </div>
-
-              <p>Funciona como seu diário de bordo diário[cite: 1]. Em <strong>Relatório > Por Período</strong>, filtre por operador, janela de data e analise os totalizadores[cite: 1]:</p>
-              <ul class="list-disc pl-5 space-y-1">
-                <li><strong>Valor Bruto & Líquido:</strong> Faturamento total versus valor real descontado de taxas[cite: 1].</li>
-                <li><strong>Fichas Validadas:</strong> Quantidade de QR Codes lidos/queimados na portaria ou balcão[cite: 1].</li>
-                <li><strong>Formas de Pagamento:</strong> Clique na seta expansível da linha do turno para ver a divisão exata entre Dinheiro, Crédito, Débito e Pix[cite: 1].</li>
-              </ul>
-
-              <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
-                <p class="text-xs font-bold text-amber-900 uppercase">Dica de Ouro</p>
-                <p class="text-xs text-amber-800 mt-1">Acompanhe sempre a coluna <strong>Cancelado</strong>! Um volume elevado de estornos em um mesmo turno indica erro operacional na maquininha ou necessidade de auditoria[cite: 1].</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Relatório por Colaborador -->
-          <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
-            <button class="accordion-header w-full px-5 py-4 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors">
-              <span class="font-semibold text-slate-800 text-base">Relatório por Colaborador: Produtividade e cálculo de comissões</span>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
-            </button>
-            <div class="accordion-content hidden px-5 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 bg-white pt-4 space-y-4">
-              
-              <div class="my-4">
-                <div class="aspect-video w-full bg-slate-900 rounded-xl overflow-hidden shadow-sm flex items-center justify-center text-slate-400">
-                  <iframe class="w-full h-full" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" title="Relatório por Colaborador" frameborder="0" allowfullscreen></iframe>
-                </div>
-              </div>
-
-              <p>Em <strong>Relatório > Por Colaborador</strong>, meça o desempenho individual do seu time para cálculo de comissões[cite: 1]:</p>
-              <ul class="list-disc pl-5 space-y-1">
-                <li><strong>Qtd Transações:</strong> Número de passagens de cartão e vendas concluídas por garçom/caixa[cite: 1].</li>
-                <li><strong>Qtd Validações:</strong> Mede entregas físicas de itens no balcão via leitura de ficha[cite: 1].</li>
-                <li><strong>Valor Líquido por Operador:</strong> Base recomendada para regras de comissionamento[cite: 1].</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Relatório por Terminal / Cupom / Taxa de Serviço -->
-          <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
-            <button class="accordion-header w-full px-5 py-4 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors">
-              <span class="font-semibold text-slate-800 text-base">Conferência de Maquininhas, Cupons de Desconto e Gorjetas</span>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
-            </button>
-            <div class="accordion-content hidden px-5 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 bg-white pt-4 space-y-4">
-              
-              <p><strong>Fechamento de Maquininhas (Por Terminal):</strong> Faça a "conferência cega" das maquininhas físicas (PDVs móveis/caixas), garantindo que as vias de papel e recebimentos batam centavo por centavo com o relatório do sistema[cite: 1].</p>
-              
-              <p><strong>Relatório por Cupom:</strong> Acompanhe resgates de campanhas de marketing e clique no botão <strong>Ver Produtos</strong> para auditando se as regras de desconto não foram aplicadas em itens indevidos[cite: 1].</p>
-
-              <p><strong>Taxa de Serviço / Gorjetas:</strong> Isole o valor arrecadado de taxa de serviço do faturamento bruto da casa para realizar o repasse/rateio preciso de gorjetas para a equipe[cite: 1].</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SEÇÃO 6: OPERAÇÃO E KDS -->
-      <div id="operacao-kds" class="scroll-mt-24">
-        <div class="flex items-center gap-3 mb-6 pb-3 border-b border-slate-200">
-          <div class="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
-            <i data-lucide="chef-hat" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h2 class="text-xl font-bold text-slate-900">Operação em Tempo Real & Cozinha (KDS)</h2>
-            <p class="text-xs text-slate-500">Acompanhe picos de venda ao vivo e gerencie a fila de preparo de pratos e drinks.</p>
-          </div>
-        </div>
-
-        <div class="space-y-4">
-          <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
-            <button class="accordion-header w-full px-5 py-4 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors">
-              <span class="font-semibold text-slate-800 text-base">Como utilizar o Painel Em Tempo Real e a Fila de Preparo (KDS)</span>
-              <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
-            </button>
-            <div class="accordion-content hidden px-5 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 bg-white pt-4 space-y-4">
-              
-              <div class="my-4">
-                <div class="aspect-video w-full bg-slate-900 rounded-xl overflow-hidden shadow-sm flex items-center justify-center text-slate-400">
-                  <iframe class="w-full h-full" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" title="Operação ao Vivo e KDS" frameborder="0" allowfullscreen></iframe>
-                </div>
-              </div>
-
-              <p><strong>Painel Em Tempo Real:</strong> Projetado para ficar aberto no balcão/gerência durante o expediente[cite: 1]. Exibe total de transações, produtos entregues e gráfico com picos de vendas configuráveis por intervalos (ex: a cada 30 minutos)[cite: 1].</p>
-
-              <p><strong>Tela da Cozinha / Bar (KDS):</strong></p>
-              <ol class="list-decimal pl-5 space-y-1">
-                <li>Acesse o menu <strong>Preparo</strong> e filtre por praça (ex: "BARZIN") ou selecione <i>Todas as Filas</i>[cite: 1].</li>
-                <li>Leia no card do pedido a quantidade, observações em azul (ex: "Sem cebola", "Para viagem") e a identificação do cliente/mesa[cite: 1].</li>
-                <li>Acompanhe o cronômetro do <strong>Tempo em Andamento</strong> (alerta em vermelho para atrasos)[cite: 1].</li>
-                <li>Quando o item estiver pronto, o cozinheiro clica no botão rosa <strong>PEDIDO PRONTO</strong> para remover da fila e notificar a equipe[cite: 1].</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CTA de Contato -->
-      <div class="mt-12 bg-indigo-50 border border-indigo-100 rounded-xl p-6 sm:p-8 text-center">
-        <h3 class="text-lg font-bold text-indigo-950 mb-2">Ainda precisa de suporte técnico com a sua operação?</h3>
-        <p class="text-indigo-700 text-sm mb-6 max-w-xl mx-auto">Nossos especialistas em CX podem te ajudar a configurar sua conta, maquininhas e impressoras remotamente.</p>
-        <a href="novo-ticket.html" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm">
-          <i data-lucide="message-square" class="w-4 h-4"></i>
-          Abrir Chamado de Suporte
-        </a>
-      </div>
-
-    </section>
-  </main>
-
-  <!-- Rodapé -->
-  <footer class="bg-slate-900 text-slate-400 py-8 px-4 sm:px-6 lg:px-8 mt-auto border-t border-slate-800 text-sm">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p>&copy; 2026 iTicket / SuporteCX. Todos os direitos reservados.</p>
-      <div class="flex gap-6">
-        <a href="#" class="hover:text-white transition-colors">Termos de Uso</a>
-        <a href="#" class="hover:text-white transition-colors">Privacidade</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts Interativos JS -->
-  <script>
-    lucide.createIcons();
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // Accordion (Sanfona)
-      const headers = document.querySelectorAll('.accordion-header');
-      headers.forEach(header => {
-        header.addEventListener('click', () => {
-          const content = header.nextElementSibling;
-          const icon = header.querySelector('i');
-          const isHidden = content.classList.contains('hidden');
-
-          if (isHidden) {
-            content.classList.remove('hidden');
-            icon.classList.add('rotate-180');
-          } else {
-            content.classList.add('hidden');
-            icon.classList.remove('rotate-180');
-          }
-        });
-      });
-
-      // Busca em Tempo Real nos Artigos do FAQ
-      const searchInput = document.getElementById('faqSearchInput');
-      const items = document.querySelectorAll('.accordion-item');
-
-      searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
-
-        items.forEach(item => {
-          const text = item.textContent.toLowerCase();
-          const content = item.querySelector('.accordion-content');
-          const icon = item.querySelector('.accordion-header i');
-
-          if (query === '') {
-            item.style.display = '';
-            content.classList.add('hidden');
-            if (icon) icon.classList.remove('rotate-180');
-          } else if (text.includes(query)) {
-            item.style.display = '';
-            content.classList.remove('hidden');
-            if (icon) icon.classList.add('rotate-180');
-          } else {
-            item.style.display = 'none';
-          }
-        });
+        if (isHidden) {
+          content.classList.remove('hidden');
+          icon.classList.add('rotate-180');
+        } else {
+          content.classList.add('hidden');
+          icon.classList.remove('rotate-180');
+        }
       });
     });
-  </script>
-</body>
-</html>
+
+    // Real-Time Search Filter
+    const searchInput = document.getElementById('faq-search');
+    const clearBtn = document.getElementById('clear-search');
+    const faqCards = document.querySelectorAll('.faq-category-card');
+
+    function filterFAQ(query) {
+      const cleanQuery = query.toLowerCase().trim();
+      if (clearBtn) {
+        if (cleanQuery.length > 0) {
+          clearBtn.classList.remove('hidden');
+        } else {
+          clearBtn.classList.add('hidden');
+        }
+      }
+
+      faqCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (cleanQuery === '' || text.includes(cleanQuery)) {
+          card.classList.remove('hidden');
+          // Auto expand matched items inside if searching
+          if (cleanQuery !== '') {
+            card.querySelectorAll('.faq-content').forEach(c => c.classList.remove('hidden'));
+            card.querySelectorAll('.faq-icon').forEach(icon => icon.classList.add('rotate-180'));
+          }
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        filterFAQ(e.target.value);
+      });
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        if (searchInput) {
+          searchInput.value = '';
+          filterFAQ('');
+          searchInput.focus();
+        }
+      });
+    }
+
+    // Quick Chip Clicks
+    const chips = document.querySelectorAll('.quick-chip');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const term = chip.getAttribute('data-term');
+        if (searchInput && term) {
+          searchInput.value = term;
+          filterFAQ(term);
+          searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    });
+  })();
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-surface-container-high py-md px-gutter"><div class="flex flex-col md:flex-row items-center justify-between gap-sm font-label-md text-label-md text-on-surface-variant"><div>© 2025 iTicket Tecnologia S.A. Todos os direitos reservados.</div><div class="flex items-center gap-md"><a class="hover:text-on-surface transition-colors" data-path="falar-com-suporte" href="#">Central de Suporte</a><a class="hover:text-on-surface transition-colors" data-path="termos-de-uso" href="#">Termos de Uso</a><a class="hover:text-on-surface transition-colors" data-path="politica-de-privacidade" href="#">Privacidade</a></div></div></footer></div></body></html>
