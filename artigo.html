@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title id="page-title">Artigo | iTicket Help</title>
+  
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  
+  <style>
+    @layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container": "#eceef0",
+            "on-background": "#191c1e",
+            "on-surface-variant": "#5d3f43",
+            "surface-container-low": "#f2f4f6",
+            "surface-dim": "#d8dadc",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#001453",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#ffd9dd",
+            "surface-container-high": "#e6e8ea",
+            "primary-fixed-dim": "#ffb2bd",
+            "on-error-container": "#93000a",
+            "secondary-container": "#708cfd",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#005225",
+            "secondary": "#3755c3",
+            "on-secondary-fixed-variant": "#173bab",
+            "outline": "#926e72",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed": "#00210b",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#dde1ff",
+            "tertiary": "#006b32",
+            "surface-variant": "#e0e3e5",
+            "on-primary-container": "#fffbff",
+            "surface-tint": "#bd0049",
+            "on-secondary-container": "#00217a",
+            "inverse-primary": "#ffb2bd",
+            "on-surface": "#191c1e",
+            "primary-container": "#e6005b",
+            "on-primary-fixed-variant": "#900036",
+            "on-primary-fixed": "#400013",
+            "surface-bright": "#f7f9fb",
+            "background": "#f7f9fb",
+            "on-tertiary-container": "#f7fff3",
+            "surface-container-highest": "#e0e3e5",
+            "inverse-surface": "#2d3133",
+            "tertiary-container": "#008741",
+            "outline-variant": "#e6bcc1",
+            "tertiary-fixed": "#83fba1",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed-dim": "#66de87",
+            "secondary-fixed-dim": "#b8c4ff",
+            "surface": "#f7f9fb",
+            "error": "#ba1a1a",
+            "inverse-on-surface": "#eff1f3",
+            "primary": "#b80047"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "sm": "16px",
+            "gutter": "24px",
+            "margin-mobile": "16px",
+            "base": "4px",
+            "xl": "64px",
+            "container-max": "1200px",
+            "lg": "40px",
+            "md": "24px",
+            "xs": "8px"
+          },
+          "fontFamily": {
+            "headline-md": ["Hanken Grotesk"],
+            "body-md": ["Hanken Grotesk"],
+            "headline-lg": ["Hanken Grotesk"],
+            "body-lg": ["Hanken Grotesk"],
+            "headline-xl": ["Hanken Grotesk"],
+            "label-md": ["Hanken Grotesk"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col">
+
+  <!-- Header Fixo -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-surface-container-high shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-16 px-gutter flex items-center justify-between">
+      <div class="flex items-center gap-lg">
+        <a href="index.html" class="flex items-center gap-xs">
+          <div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary font-headline-md text-headline-md">iT</div>
+          <span class="font-headline-md text-headline-md tracking-tight text-on-surface">iTicket <span class="text-primary">Help</span></span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-md">
+          <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="index.html">Início</a>
+          <a class="text-primary font-headline-md transition-colors" href="faq.html">Categorias</a>
+          <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="meus-chamados.html">Meus Chamados</a>
+        </nav>
+      </div>
+      <div class="flex items-center gap-sm">
+        <a href="novo-ticket.html" class="inline-flex items-center gap-xs bg-primary text-on-primary font-label-md text-label-md px-md py-xs rounded-lg hover:bg-primary-container transition-all shadow-[0_2px_8px_rgba(184,0,71,0.2)]">
+          <span class="material-symbols-outlined text-[18px]">add_task</span>
+          <span>Abrir Ticket</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar Lateral -->
+  <aside class="fixed left-0 top-16 bottom-0 w-72 bg-surface-container-lowest border-r border-surface-container-high z-40 flex flex-col justify-between overflow-y-auto">
+    <div class="p-md">
+      <div class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-sm px-xs">Manuais & Tutoriais</div>
+      <nav class="space-y-base">
+        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="faq.html#configuracoes">
+          <span class="material-symbols-outlined text-[20px]">store</span><span>Configurações da Loja</span>
+        </a>
+        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="faq.html#equipe">
+          <span class="material-symbols-outlined text-[20px]">badge</span><span>Equipe e Permissões</span>
+        </a>
+        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="faq.html#produtos">
+          <span class="material-symbols-outlined text-[20px]">restaurant_menu</span><span>Produtos & Cardápio</span>
+        </a>
+        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="faq.html#financeiro">
+          <span class="material-symbols-outlined text-[20px]">payments</span><span>Financeiro & Recebimento</span>
+        </a>
+        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="faq.html#relatorios">
+          <span class="material-symbols-outlined text-[20px]">analytics</span><span>Relatórios de Vendas</span>
+        </a>
+        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="faq.html#kds">
+          <span class="material-symbols-outlined text-[20px]">soup_kitchen</span><span>Operação & Cozinha (KDS)</span>
+        </a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Conteúdo do Artigo -->
+  <div class="pl-72 flex flex-col flex-1 min-h-screen">
+    <main class="flex-1 pt-16 px-gutter bg-surface">
+      <div class="max-w-4xl mx-auto py-md space-y-md">
+        
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-xs font-label-md text-label-md text-on-surface-variant">
+          <a href="index.html" class="hover:text-on-surface">Início</a>
+          <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+          <a href="faq.html" class="hover:text-on-surface">Base de Conhecimento</a>
+          <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+          <span id="article-category-breadcrumb" class="text-primary font-semibold">Carregando...</span>
+        </nav>
+
+        <!-- Artigo Container -->
+        <article class="bg-surface-container-lowest rounded-xl p-lg shadow-sm space-y-md border border-surface-container-high">
+          
+          <!-- Cabeçalho -->
+          <header class="border-b border-surface-container-high pb-md space-y-xs">
+            <div class="flex items-center gap-sm font-label-md text-label-md text-on-surface-variant">
+              <span id="article-badge" class="px-sm py-base rounded-full bg-primary-fixed text-on-primary-fixed font-bold"></span>
+              <span id="article-time" class="flex items-center gap-xs">
+                <span class="material-symbols-outlined text-[16px]">schedule</span>
+                <span></span>
+              </span>
+              <span id="article-date" class="hidden sm:inline"></span>
+            </div>
+            <h1 id="article-title" class="font-headline-xl text-headline-xl text-on-surface tracking-tight"></h1>
+            <p id="article-desc" class="font-body-lg text-body-lg text-on-surface-variant"></p>
+          </header>
+
+          <!-- Video Player -->
+          <div id="video-container" class="aspect-video w-full bg-slate-900 rounded-xl overflow-hidden shadow-sm hidden">
+            <iframe id="article-video" class="w-full h-full" src="" title="Video Tutorial" frameborder="0" allowfullscreen></iframe>
+          </div>
+
+          <!-- Pre-requisitos -->
+          <div id="prereq-container" class="bg-surface-container-low rounded-xl p-md space-y-xs hidden">
+            <h3 class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-xs">
+              <span class="material-symbols-outlined text-secondary text-[20px]">check_box</span>
+              Pré-requisitos recomendados
+            </h3>
+            <ul id="prereq-list" class="space-y-xs font-body-md text-on-surface list-disc pl-md"></ul>
+          </div>
+
+          <!-- Passo a Passo -->
+          <div class="space-y-sm">
+            <h3 class="font-headline-md text-headline-md text-on-surface">Passo a Passo Detalhado</h3>
+            <div id="steps-container" class="space-y-sm"></div>
+          </div>
+
+          <!-- Dica de Ouro -->
+          <div id="dica-container" class="bg-primary-fixed/40 rounded-xl p-md flex items-start gap-sm hidden">
+            <div class="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[20px]">lightbulb</span>
+            </div>
+            <div>
+              <div class="font-label-md text-label-md font-bold text-on-primary-fixed mb-base">Dica de Ouro</div>
+              <p id="dica-text" class="font-body-md text-on-surface"></p>
+            </div>
+          </div>
+
+          <!-- Bloco de Feedback (Foi útil?) -->
+          <section class="border-t border-surface-container-high pt-md mt-lg flex flex-col sm:flex-row items-center justify-between gap-md bg-surface-container-low p-md rounded-xl">
+            <div>
+              <h4 class="font-headline-md text-headline-md text-on-surface">Este artigo foi útil?</h4>
+              <p class="font-body-md text-[13px] text-on-surface-variant">Sua avaliação nos ajuda a melhorar os tutoriais.</p>
+            </div>
+            <div id="feedback-actions" class="flex items-center gap-sm">
+              <button onclick="handleFeedback(true)" class="inline-flex items-center gap-xs px-md py-xs rounded-lg bg-surface-container-lowest border border-surface-container-high hover:bg-tertiary-fixed text-on-surface font-label-md text-label-md transition-colors">
+                <span class="material-symbols-outlined text-[18px] text-tertiary">thumb_up</span> Sim
+              </button>
+              <button onclick="handleFeedback(false)" class="inline-flex items-center gap-xs px-md py-xs rounded-lg bg-surface-container-lowest border border-surface-container-high hover:bg-error-container text-on-surface font-label-md text-label-md transition-colors">
+                <span class="material-symbols-outlined text-[18px] text-error">thumb_down</span> Não
+              </button>
+            </div>
+            <div id="feedback-thanks" class="hidden text-tertiary font-label-md text-label-md flex items-center gap-xs">
+              <span class="material-symbols-outlined text-[20px]">task_alt</span> Obrigado pelo seu feedback!
+            </div>
+          </section>
+
+        </article>
+
+        <!-- Artigos Relacionados -->
+        <section class="space-y-sm">
+          <h3 class="font-headline-md text-headline-md text-on-surface">Artigos Relacionados</h3>
+          <div id="relacionados-grid" class="grid sm:grid-cols-2 gap-sm"></div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="w-full bg-surface-container-lowest border-t border-surface-container-high py-md px-gutter">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-sm font-label-md text-label-md text-on-surface-variant">
+        <div>© 2026 iTicket Tecnologia S.A. Todos os direitos reservados.</div>
+        <div class="flex items-center gap-md">
+          <a class="hover:text-on-surface transition-colors" href="novo-ticket.html">Central de Suporte</a>
+          <a class="hover:text-on-surface transition-colors" href="#">Termos de Uso</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JavaScript Dinâmico -->
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const articleId = urlParams.get('id') || 'configuracoes-identidade';
+
+      try {
+        const response = await fetch('artigos.json');
+        const artigos = await response.json();
+        const artigo = artigos[articleId];
+
+        if (!artigo) {
+          document.getElementById('article-title').innerText = 'Artigo não encontrado';
+          return;
+        }
+
+        // Renderiza Dados Básicos
+        document.title = `${artigo.titulo} | iTicket Help`;
+        document.getElementById('article-category-breadcrumb').innerText = artigo.categoria;
+        document.getElementById('article-badge').innerText = artigo.categoria;
+        document.getElementById('article-time').querySelector('span:last-child').innerText = artigo.tempoLeitura;
+        document.getElementById('article-date').innerText = `• Atualizado em ${artigo.atualizadoEm}`;
+        document.getElementById('article-title').innerText = artigo.titulo;
+        document.getElementById('article-desc').innerText = artigo.descricao;
+
+        // Video Embed
+        if (artigo.videoUrl) {
+          document.getElementById('video-container').classList.remove('hidden');
+          document.getElementById('article-video').src = artigo.videoUrl;
+        }
+
+        // Pré-requisitos
+        if (artigo.prerequisitos && artigo.prerequisitos.length > 0) {
+          const prereqContainer = document.getElementById('prereq-container');
+          const prereqList = document.getElementById('prereq-list');
+          prereqContainer.classList.remove('hidden');
+          artigo.prerequisitos.forEach(req => {
+            const li = document.createElement('li');
+            li.innerText = req;
+            prereqList.appendChild(li);
+          });
+        }
+
+        // Passo a Passo
+        const stepsContainer = document.getElementById('steps-container');
+        artigo.passos.forEach(passo => {
+          const div = document.createElement('div');
+          div.className = 'flex items-start gap-sm bg-surface-container-low p-md rounded-xl';
+          div.innerHTML = `
+            <span class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-base flex items-center justify-center shrink-0">${passo.numero}</span>
+            <div>
+              <h4 class="font-headline-md text-headline-md text-on-surface mb-base">${passo.titulo}</h4>
+              <p class="font-body-md text-on-surface-variant">${passo.descricao}</p>
+            </div>
+          `;
+          stepsContainer.appendChild(div);
+        });
+
+        // Dica de Ouro
+        if (artigo.dicaOuro) {
+          document.getElementById('dica-container').classList.remove('hidden');
+          document.getElementById('dica-text').innerText = artigo.dicaOuro;
+        }
+
+        // Artigos Relacionados
+        const relGrid = document.getElementById('relacionados-grid');
+        if (artigo.relacionados && artigo.relacionados.length > 0) {
+          artigo.relacionados.forEach(rel => {
+            const a = document.createElement('a');
+            a.href = `artigo.html?id=${rel.id}`;
+            a.className = 'p-md bg-surface-container-lowest rounded-xl border border-surface-container-high hover:shadow-md transition-all flex items-center justify-between group';
+            a.innerHTML = `
+              <span class="font-label-md text-on-surface group-hover:text-primary transition-colors">${rel.titulo}</span>
+              <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            `;
+            relGrid.appendChild(a);
+          });
+        }
+
+      } catch (err) {
+        console.error('Erro ao carregar o artigo:', err);
+      }
+    });
+
+    function handleFeedback(isPositive) {
+      document.getElementById('feedback-actions').classList.add('hidden');
+      document.getElementById('feedback-thanks').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
