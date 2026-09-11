@@ -1,45 +1,38 @@
 {
-  "cadastro-produtos": {
-    "id": "cadastro-produtos",
-    "titulo": "Como cadastrar novos produtos e definir regras de preparo",
-    "categoria": "Produtos & Cardápio",
-    "categoriaId": "produtos",
-    "tempoLeitura": "4 min de leitura",
+  "configuracoes-identidade": {
+    "id": "configuracoes-identidade",
+    "titulo": "Como preencher as Informações Gerais e Identidade Visual",
+    "categoria": "Configurações da Loja",
+    "categoriaId": "configuracoes",
+    "tempoLeitura": "3 min de leitura",
     "atualizadoEm": "Setembro, 2026",
     "videoUrl": "https://www.youtube.com/embed/SEU_ID_DO_VIDEO",
-    "descricao": "Organize pratos, bebidas e insumos no estoque para disponibilizá-los automaticamente nas maquininhas, totens e telas da cozinha.",
+    "descricao": "O menu Configurações é onde você define a identidade visual, endereço e horários de funcionamento base do seu estabelecimento na plataforma iTicket.",
     "prerequisitos": [
-      "Nome, preço de venda e categoria do item definidos.",
-      "Foto do produto em formato PNG ou JPG (até 3MB).",
-      "Código NCM orientado pela sua contabilidade."
+      "Logotipo da empresa em arquivo PNG ou JPG (recomendado fundo transparente).",
+      "Foto de capa do estabelecimento (proporção recomendada 16:9).",
+      "Endereço completo com CEP e horários de atendimento definidos."
     ],
     "passos": [
       {
         "numero": 1,
-        "titulo": "Selecionar o Tipo de Produto",
-        "descricao": "No menu lateral, acesse **Produtos > Estoque** e clique no botão **+ Adicionar Produto**. Escolha entre Consumo (venda direta), Insumo (ingrediente) ou Ambos."
+        "titulo": "Acessar o menu Configurações",
+        "descricao": "No menu lateral esquerdo do Dashboard, clique no ícone de engrenagem (**Configurações**)."
       },
       {
         "numero": 2,
-        "titulo": "Configurar Regras de Preparo e Setor",
-        "descricao": "Insira o Preço e Estoque inicial. Se o item for preparado na hora, marque **Produto de Preparo**, selecione o setor de destino (**Cozinha** ou **Bar**) e informe o tempo estimado em minutos."
+        "titulo": "Preencher dados básicos e endereço",
+        "descricao": "Digite o **Nome do Evento/Loja**, **CEP**, **Cidade** e **Endereço completo**. Em seguida, defina os **Horários de Funcionamento** para que o sistema altere automaticamente o status da loja para 'Aberto' ou 'Fechado'."
       },
       {
         "numero": 3,
-        "titulo": "Adicionar Foto e Descrição",
-        "descricao": "Arraste a foto do produto para a área indicada e detalhe os ingredientes, alergênicos e o tamanho da porção na caixa de texto."
-      },
-      {
-        "numero": 4,
-        "titulo": "Preencher Dados Fiscais com Inteligência Artificial",
-        "descricao": "Insira o código NCM manual ou clique no botão azul **Preencher com IA** no topo da tela para carregar as tributações automaticamente. Clique em **Salvar**."
+        "titulo": "Fazer upload do Logotipo e Capa",
+        "descricao": "Na seção de imagens, faça o upload da sua **Foto de Perfil** (logotipo que aparecerá nos cupons e cardápio digital) e da **Foto de Capa**. Para finalizar, clique no botão rosa **Salvar**."
       }
     ],
-    "dicaOuro": "Se o produto cobra taxa de embalagem para entregas ou viagems, marque a caixa 'Para Viagem' e preencha o campo 'Preço da Embalagem' com o valor adicional.",
-    "alerta": "Produtos sem código NCM preenchido podem travar a emissão de notas fiscais na maquininha durante o fechamento da venda.",
+    "dicaOuro": "Mantenha os horários de funcionamento sempre atualizados no painel para evitar que clientes façam pedidos online fora do expediente!",
     "relacionados": [
-      { "id": "gerenciar-estoque", "titulo": "Gerenciando o Estoque: Pausar itens esgotados e edição em massa" },
-      { "id": "organizar-cardapio", "titulo": "Como organizar Abas e reordenar o Cardápio" }
+      { "id": "regras-operacao", "titulo": "Como configurar as Regras de Operação e Pedidos (KDS e QR Code)" }
     ]
   }
 }
