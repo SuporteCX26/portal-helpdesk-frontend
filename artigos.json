@@ -1,0 +1,110 @@
+{
+  "configuracoes-identidade": {
+    "id": "configuracoes-identidade",
+    "titulo": "Como preencher as Informações Gerais e Identidade Visual",
+    "categoria": "Configurações da Loja",
+    "categoriaId": "configuracoes",
+    "tempoLeitura": "3 min de leitura",
+    "atualizadoEm": "Setembro, 2026",
+    "videoUrl": "https://www.youtube.com/embed/SEU_ID_DO_VIDEO",
+    "descricao": "O menu Configurações é onde você define a identidade, regras e o funcionamento base do seu estabelecimento dentro da plataforma iTicket.",
+    "prerequisitos": [
+      "Logotipo da empresa (PNG ou JPG com fundo transparente recomendado).",
+      "Imagem de capa do local (proporção horizontal 16:9).",
+      "Endereço completo com CEP e horários de atendimento atualizados."
+    ],
+    "passos": [
+      {
+        "numero": 1,
+        "titulo": "Acessando as Configurações",
+        "descricao": "No menu lateral esquerdo do Dashboard, clique no ícone de engrenagem (Configurações)."
+      },
+      {
+        "numero": 2,
+        "titulo": "Preenchendo dados básicos e endereço",
+        "descricao": "Insira o Nome do Evento/Loja, CEP, Cidade e Endereço completo. Defina os Horários de Funcionamento para que o sistema altere automaticamente o status para 'Aberto' ou 'Fechado'."
+      },
+      {
+        "numero": 3,
+        "titulo": "Adicionando Logotipo e Foto de Capa",
+        "descricao": "Na seção de imagens, faça o upload da Foto de Perfil (logotipo para cupons e menus digitais) e da Foto de Capa. Clicando em Salvar, sua vitrine estará pronta!"
+      }
+    ],
+    "dicaOuro": "Mantenha os horários de funcionamento sempre atualizados para evitar que clientes façam pedidos online fora do expediente!",
+    "relacionados": [
+      { "id": "regras-operacao", "titulo": "Como configurar as Regras de Operação e Pedidos (KDS e QR Code)" },
+      { "id": "equipe-permissoes", "titulo": "Como cadastrar colaboradores e escolher o Perfil de Acesso" }
+    ]
+  },
+  "regras-operacao": {
+    "id": "regras-operacao",
+    "titulo": "Como configurar as Regras de Operação e Pedidos (KDS e QR Code)",
+    "categoria": "Configurações da Loja",
+    "categoriaId": "configuracoes",
+    "tempoLeitura": "4 min de leitura",
+    "atualizadoEm": "Setembro, 2026",
+    "videoUrl": "https://www.youtube.com/embed/SEU_ID_DO_VIDEO",
+    "descricao": "Ajuste as configurações do sistema para definir o fluxo dos pedidos até a cozinha e o modo de interação dos clientes no salão.",
+    "prerequisitos": [
+      "Acesso com perfil de Administrador.",
+      "Definição prévia do fluxo de atendimento (Mesa, Balcão ou KDS)."
+    ],
+    "passos": [
+      {
+        "numero": 1,
+        "titulo": "Acessando Configurações Avançadas",
+        "descricao": "Acesse o menu Configurações Avançadas na aba ao lado do painel de Configurações."
+      },
+      {
+        "numero": 2,
+        "titulo": "Ativando o Envio para Cozinha",
+        "descricao": "Ao ativar o Envio Automático para Cozinha, os pedidos são encaminhados diretamente para a tela do KDS assim que o pagamento for confirmado."
+      },
+      {
+        "numero": 3,
+        "titulo": "Configurando Pedidos na Mesa (QR Code)",
+        "descricao": "Defina se o cliente poderá realizar pedidos de forma autônoma pelo celular ou se o código funcionará apenas como visualizador de cardápio digital."
+      }
+    ],
+    "dicaOuro": "Caso o seu estabelecimento opere apenas em formato de exposição (sem pagamentos online), ative a opção Apenas Cardápio Digital.",
+    "relacionados": [
+      { "id": "configuracoes-identidade", "titulo": "Como preencher as Informações Gerais e Identidade Visual" },
+      { "id": "kds-operacao", "titulo": "Como utilizar a Fila de Preparo da Cozinha (KDS)" }
+    ]
+  },
+  "equipe-permissoes": {
+    "id": "equipe-permissoes",
+    "titulo": "Como cadastrar colaboradores e escolher o Perfil de Acesso",
+    "categoria": "Equipe e Permissões",
+    "categoriaId": "equipe",
+    "tempoLeitura": "5 min de leitura",
+    "atualizadoEm": "Setembro, 2026",
+    "videoUrl": "https://www.youtube.com/embed/SEU_ID_DO_VIDEO",
+    "descricao": "Aprenda a adicionar membros da sua equipe e liberar o acesso ao sistema do estabelecimento de forma segura.",
+    "prerequisitos": [
+      "Nome completo, e-mail e celular do colaborador.",
+      "CPF válido para emissão de acessos operacionais."
+    ],
+    "passos": [
+      {
+        "numero": 1,
+        "titulo": "Acessando a tela de cadastro",
+        "descricao": "No menu lateral esquerdo do Dashboard, clique em Colaboradores. No canto superior direito, clique no botão + Cadastrar."
+      },
+      {
+        "numero": 2,
+        "titulo": "Preenchendo dados básicos",
+        "descricao": "Preencha o Nome, E-mail, CPF e Celular. No campo Tipo, escolha se o colaborador é Fixo ou Freelancer."
+      },
+      {
+        "numero": 3,
+        "titulo": "Selecionando o Perfil de Acesso",
+        "descricao": "No campo Função, escolha a permissão adequada (Admin, Bar, Cozinha ou Caixa). Clique no botão Salvar."
+      }
+    ],
+    "dicaOuro": "Nunca passe a senha do usuário Admin para operadores da pista. Para ações restritas (como estorno), o sistema solicitará o PIN do administrador na tela.",
+    "relacionados": [
+      { "id": "configuracoes-identidade", "titulo": "Como preencher as Informações Gerais e Identidade Visual" }
+    ]
+  }
+}
