@@ -94,8 +94,7 @@
             "headline-lg": ["Hanken Grotesk"],
             "body-lg": ["Hanken Grotesk"],
             "headline-xl": ["Hanken Grotesk"],
-            "label-md": ["Hanken Grotesk"],
-            "headline-lg-mobile": ["Hanken Grotesk"]
+            "label-md": ["Hanken Grotesk"]
           }
         }
       }
@@ -131,10 +130,10 @@
     </div>
   </header>
 
-  <!-- Sidebar Lateral Ficha de Navegação -->
+  <!-- Sidebar Lateral -->
   <aside class="fixed left-0 top-16 bottom-0 w-72 bg-surface-container-lowest border-r border-surface-container-high z-40 flex flex-col justify-between overflow-y-auto">
     <div class="p-md">
-      <div class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-sm px-xs">Manuais & Tutoriais</div>
+      <div class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-sm px-xs">Manuais &amp; Tutoriais</div>
       <nav class="space-y-base">
         <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="#configuracoes">
           <span class="material-symbols-outlined text-[20px]">store</span><span>Configurações da Loja</span>
@@ -143,16 +142,16 @@
           <span class="material-symbols-outlined text-[20px]">badge</span><span>Equipe e Permissões</span>
         </a>
         <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="#produtos">
-          <span class="material-symbols-outlined text-[20px]">restaurant_menu</span><span>Produtos & Cardápio</span>
+          <span class="material-symbols-outlined text-[20px]">restaurant_menu</span><span>Produtos &amp; Cardápio</span>
         </a>
         <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="#financeiro">
-          <span class="material-symbols-outlined text-[20px]">payments</span><span>Financeiro & Recebimento</span>
+          <span class="material-symbols-outlined text-[20px]">payments</span><span>Financeiro &amp; Recebimento</span>
         </a>
         <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="#relatorios">
           <span class="material-symbols-outlined text-[20px]">analytics</span><span>Relatórios de Vendas</span>
         </a>
         <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="#kds">
-          <span class="material-symbols-outlined text-[20px]">soup_kitchen</span><span>Operação & Cozinha (KDS)</span>
+          <span class="material-symbols-outlined text-[20px]">soup_kitchen</span><span>Operação &amp; Cozinha (KDS)</span>
         </a>
       </nav>
     </div>
@@ -174,9 +173,9 @@
     <main class="flex-1 pt-16 px-gutter bg-surface">
       <div class="flex flex-col w-full py-md">
         
-        <!-- Search Banner -->
+        <!-- Banner de Busca -->
         <section class="relative bg-surface-container-lowest py-lg px-gutter rounded-xl shadow-sm mb-lg overflow-hidden">
-          <div class="relative max-w-4xl mx-auto text-center flex flex-col items-center">
+          <div class="relative max-w-3xl mx-auto text-center flex flex-col items-center">
             <h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight mb-xs">
               Manuais e Tutoriais do Sistema iTicket
             </h1>
@@ -193,169 +192,246 @@
           </div>
         </section>
 
-        <!-- Container de Categorias -->
+        <!-- Atalhos Rápidos para Categorias -->
+        <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-xs mb-lg">
+          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#configuracoes">
+            <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
+              <span class="material-symbols-outlined text-[22px]">storefront</span>
+            </div>
+            <span class="font-label-md text-label-md text-on-surface">Configurações</span>
+          </a>
+          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#equipe">
+            <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
+              <span class="material-symbols-outlined text-[22px]">badge</span>
+            </div>
+            <span class="font-label-md text-label-md text-on-surface">Equipe</span>
+          </a>
+          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#produtos">
+            <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
+              <span class="material-symbols-outlined text-[22px]">restaurant_menu</span>
+            </div>
+            <span class="font-label-md text-label-md text-on-surface">Cardápio</span>
+          </a>
+          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#financeiro">
+            <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
+              <span class="material-symbols-outlined text-[22px]">payments</span>
+            </div>
+            <span class="font-label-md text-label-md text-on-surface">Financeiro</span>
+          </a>
+          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#relatorios">
+            <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
+              <span class="material-symbols-outlined text-[22px]">analytics</span>
+            </div>
+            <span class="font-label-md text-label-md text-on-surface">Relatórios</span>
+          </a>
+          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#kds">
+            <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
+              <span class="material-symbols-outlined text-[22px]">soup_kitchen</span>
+            </div>
+            <span class="font-label-md text-label-md text-on-surface">KDS Cozinha</span>
+          </a>
+        </section>
+
+        <!-- Lista de Categorias e Artigos -->
         <div class="space-y-lg mb-xl">
           
-          <!-- 1. Configurações -->
+          <!-- MÓDULO 1: CONFIGURAÇÕES -->
           <article class="faq-category-card bg-surface-container-lowest rounded-xl p-md shadow-sm scroll-mt-24" id="configuracoes">
             <header class="flex items-start gap-md mb-md">
               <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                 <span class="material-symbols-outlined text-[28px]">storefront</span>
               </div>
               <div class="flex-1">
+                <div class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Módulo 01</div>
                 <h2 class="font-headline-lg text-headline-lg text-on-surface">Configurações e Identidade Visual</h2>
                 <p class="font-body-md text-body-md text-on-surface-variant">Defina o endereço, horários de funcionamento e regras da operação.</p>
               </div>
             </header>
 
             <div class="space-y-sm">
-              <div class="faq-item rounded-lg bg-surface-container-low overflow-hidden">
-                <button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
-                  <span class="font-headline-md text-headline-md text-on-surface">Como preencher as Informações Gerais e Identidade Visual</span>
-                  <span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
-                </button>
-                <div class="faq-content hidden p-md pt-0">
-                  <div class="bg-surface-container-lowest rounded-lg p-md space-y-md">
-                    <!-- Embed de Vídeo Editável -->
-                    <div class="aspect-video w-full bg-slate-900 rounded-xl overflow-hidden shadow-sm">
-                      <iframe class="w-full h-full" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" title="Tutorial de Configurações" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <p class="font-body-md text-on-surface">O menu <strong>Configurações</strong> é onde você define a identidade, regras e o funcionamento base do seu estabelecimento[cite: 1].</p>
-                  </div>
+              <a href="artigo.html?id=configuracoes-identidade" class="faq-article-item flex items-center justify-between p-md bg-surface-container-low hover:bg-surface-container rounded-lg transition-all group">
+                <div class="flex items-center gap-xs">
+                  <span class="material-symbols-outlined text-primary text-[22px]">article</span>
+                  <span class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Como preencher as Informações Gerais e Identidade Visual</span>
                 </div>
-              </div>
+                <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+
+              <a href="artigo.html?id=regras-operacao" class="faq-article-item flex items-center justify-between p-md bg-surface-container-low hover:bg-surface-container rounded-lg transition-all group">
+                <div class="flex items-center gap-xs">
+                  <span class="material-symbols-outlined text-primary text-[22px]">article</span>
+                  <span class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Como configurar as Regras de Operação e Pedidos (KDS e QR Code)</span>
+                </div>
+                <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
             </div>
           </article>
 
-          <!-- 2. Equipe -->
+          <!-- MÓDULO 2: EQUIPE -->
           <article class="faq-category-card bg-surface-container-lowest rounded-xl p-md shadow-sm scroll-mt-24" id="equipe">
             <header class="flex items-start gap-md mb-md">
               <div class="w-12 h-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
                 <span class="material-symbols-outlined text-[28px]">badge</span>
               </div>
               <div class="flex-1">
-                <h2 class="font-headline-lg text-headline-lg text-on-surface">Gestão de Equipe & Perfis de Acesso</h2>
+                <div class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Módulo 02</div>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">Gestão de Equipe &amp; Perfis de Acesso</h2>
                 <p class="font-body-md text-body-md text-on-surface-variant">Cadastre colaboradores e defina quais telas cada função pode visualizar.</p>
               </div>
             </header>
 
             <div class="space-y-sm">
-              <div class="faq-item rounded-lg bg-surface-container-low overflow-hidden">
-                <button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
-                  <span class="font-headline-md text-headline-md text-on-surface">Como cadastrar colaboradores e escolher o Perfil de Acesso</span>
-                  <span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
-                </button>
-                <div class="faq-content hidden p-md pt-0">
-                  <div class="bg-surface-container-lowest rounded-lg p-md space-y-md">
-                    <p class="font-body-md text-on-surface">Defina os perfis de Admin, Bar, Cozinha e Caixa para garantir a segurança dos dados financeiros[cite: 1].</p>
-                  </div>
+              <a href="artigo.html?id=equipe-permissoes" class="faq-article-item flex items-center justify-between p-md bg-surface-container-low hover:bg-surface-container rounded-lg transition-all group">
+                <div class="flex items-center gap-xs">
+                  <span class="material-symbols-outlined text-secondary text-[22px]">article</span>
+                  <span class="font-headline-md text-headline-md text-on-surface group-hover:text-secondary transition-colors">Como cadastrar colaboradores e escolher o Perfil de Acesso</span>
                 </div>
-              </div>
+                <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
             </div>
           </article>
 
-          <!-- 3. Produtos -->
+          <!-- MÓDULO 3: PRODUTOS & CARDÁPIO -->
           <article class="faq-category-card bg-surface-container-lowest rounded-xl p-md shadow-sm scroll-mt-24" id="produtos">
             <header class="flex items-start gap-md mb-md">
               <div class="w-12 h-12 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center shrink-0">
                 <span class="material-symbols-outlined text-[28px]">restaurant_menu</span>
               </div>
               <div class="flex-1">
-                <h2 class="font-headline-lg text-headline-lg text-on-surface">Produtos, Estoque & Cardápio Digital</h2>
+                <div class="font-label-md text-label-md text-tertiary font-bold uppercase tracking-wider">Módulo 03</div>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">Produtos, Estoque &amp; Cardápio Digital</h2>
                 <p class="font-body-md text-body-md text-on-surface-variant">Cadastre itens, organize abas, ajuste estoque e regras de preparo.</p>
               </div>
             </header>
 
             <div class="space-y-sm">
-              <div class="faq-item rounded-lg bg-surface-container-low overflow-hidden">
-                <button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
-                  <span class="font-headline-md text-headline-md text-on-surface">Como cadastrar novos produtos e organizar o cardápio</span>
-                  <span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
-                </button>
-                <div class="faq-content hidden p-md pt-0">
-                  <div class="bg-surface-container-lowest rounded-lg p-md space-y-md">
-                    <p class="font-body-md text-on-surface">Cadastre produtos do tipo Consumo, Insumo ou Ambos e organize o cardápio por abas[cite: 1].</p>
-                  </div>
+              <a href="artigo.html?id=cadastro-produtos" class="faq-article-item flex items-center justify-between p-md bg-surface-container-low hover:bg-surface-container rounded-lg transition-all group">
+                <div class="flex items-center gap-xs">
+                  <span class="material-symbols-outlined text-tertiary text-[22px]">article</span>
+                  <span class="font-headline-md text-headline-md text-on-surface group-hover:text-tertiary transition-colors">Como cadastrar novos produtos e definir regras de preparo</span>
                 </div>
-              </div>
+                <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+
+              <a href="artigo.html?id=gerenciar-estoque" class="faq-article-item flex items-center justify-between p-md bg-surface-container-low hover:bg-surface-container rounded-lg transition-all group">
+                <div class="flex items-center gap-xs">
+                  <span class="material-symbols-outlined text-tertiary text-[22px]">article</span>
+                  <span class="font-headline-md text-headline-md text-on-surface group-hover:text-tertiary transition-colors">Gerenciando o Estoque: Pausar itens esgotados e edição em massa</span>
+                </div>
+                <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+
+              <a href="artigo.html?id=organizar-cardapio" class="faq-article-item flex items-center justify-between p-md bg-surface-container-low hover:bg-surface-container rounded-lg transition-all group">
+                <div class="flex items-center gap-xs">
+                  <span class="material-symbols-outlined text-tertiary text-[22px]">article</span>
+                  <span class="font-headline-md text-headline-md text-on-surface group-hover:text-tertiary transition-colors">Como organizar Abas (Categorias) e reordenar o Cardápio por Arrastar-e-Soltar</span>
+                </div>
+                <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
             </div>
           </article>
 
-          <!-- 4. Financeiro -->
+          <!-- MÓDULO 4: FINANCEIRO -->
           <article class="faq-category-card bg-surface-container-lowest rounded-xl p-md shadow-sm scroll-mt-24" id="financeiro">
             <header class="flex items-start gap-md mb-md">
               <div class="w-12 h-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
                 <span class="material-symbols-outlined text-[28px]">payments</span>
               </div>
               <div class="flex-1">
+                <div class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Módulo 04</div>
                 <h2 class="font-headline-lg text-headline-lg text-on-surface">Financeiro, Pré-Autorizadas e Recebimento</h2>
                 <p class="font-body-md text-body-md text-on-surface-variant">Audite transações, monitore comandas abertas e acompanhe depósitos bancários.</p>
               </div>
             </header>
+
             <div class="space-y-sm">
-              <div class="faq-item rounded-lg bg-surface-container-low overflow-hidden">
-                <button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
-                  <span class="font-headline-md text-headline-md text-on-surface">Como consultar e auditar transações de vendas</span>
-                  <span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
-                </button>
-                <div class="faq-content hidden p-md pt-0">
-                  <div class="bg-surface-container-lowest rounded-lg p-md space-y-md">
-                    <p class="font-body-md text-on-surface">Consulte o histórico completo de transações e exporte relatórios[cite: 1].</p>
-                  </div>
+              <a href="artigo.html?id=consultar-transacoes" class="faq-article-item flex items-center justify-between p-md bg-surface-container-low hover:bg-surface-container rounded-lg transition-all group">
+                <div class="flex items-center gap-xs">
+                  <span class="material-symbols-outlined text-secondary text-[22px]">article</span>
+                  <span class="font-headline-md text-headline-md text-on-surface group-hover:text-secondary transition-colors">Como consultar, auditar e exportar Transações de vendas</span>
                 </div>
-              </div>
+                <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+
+              <a href="artigo.html?id=pre-autorizadas" class="faq-article-item flex items-center justify-between p-md bg-surface-container-low hover:bg-surface-container rounded-lg transition-all group">
+                <div class="flex items-center gap-xs">
+                  <span class="material-symbols-outlined text-secondary text-[22px]">article</span>
+                  <span class="font-headline-md text-headline-md text-on-surface group-hover:text-secondary transition-colors">Monitorando Pré-Autorizadas e limites retidos em comandas</span>
+                </div>
+                <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+
+              <a href="artigo.html?id=recebimentos-taxas" class="faq-article-item flex items-center justify-between p-md bg-surface-container-low hover:bg-surface-container rounded-lg transition-all group">
+                <div class="flex items-center gap-xs">
+                  <span class="material-symbols-outlined text-secondary text-[22px]">article</span>
+                  <span class="font-headline-md text-headline-md text-on-surface group-hover:text-secondary transition-colors">Como acompanhar Recebimentos Bancários e Faturas de taxas</span>
+                </div>
+                <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
             </div>
           </article>
 
-          <!-- 5. Relatórios -->
+          <!-- MÓDULO 5: RELATÓRIOS -->
           <article class="faq-category-card bg-surface-container-lowest rounded-xl p-md shadow-sm scroll-mt-24" id="relatorios">
             <header class="flex items-start gap-md mb-md">
               <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                 <span class="material-symbols-outlined text-[28px]">analytics</span>
               </div>
               <div class="flex-1">
+                <div class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Módulo 05</div>
                 <h2 class="font-headline-lg text-headline-lg text-on-surface">Relatórios de Vendas e Fechamento</h2>
                 <p class="font-body-md text-body-md text-on-surface-variant">Analise turnos, produtividade da equipe, vendas por produto e comissões.</p>
               </div>
             </header>
+
             <div class="space-y-sm">
-              <div class="faq-item rounded-lg bg-surface-container-low overflow-hidden">
-                <button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
-                  <span class="font-headline-md text-headline-md text-on-surface">Relatório por Período e Fechamento de Turno</span>
-                  <span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
-                </button>
-                <div class="faq-content hidden p-md pt-0">
-                  <div class="bg-surface-container-lowest rounded-lg p-md space-y-md">
-                    <p class="font-body-md text-on-surface">Acompanhe faturamento bruto, líquido e quantidade de vendas por turno[cite: 1].</p>
-                  </div>
+              <a href="artigo.html?id=relatorio-periodo" class="faq-article-item flex items-center justify-between p-md bg-surface-container-low hover:bg-surface-container rounded-lg transition-all group">
+                <div class="flex items-center gap-xs">
+                  <span class="material-symbols-outlined text-primary text-[22px]">article</span>
+                  <span class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Relatório por Período: Fechamento de turnos e cancelamentos</span>
                 </div>
-              </div>
+                <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+
+              <a href="artigo.html?id=relatorio-colaborador" class="faq-article-item flex items-center justify-between p-md bg-surface-container-low hover:bg-surface-container rounded-lg transition-all group">
+                <div class="flex items-center gap-xs">
+                  <span class="material-symbols-outlined text-primary text-[22px]">article</span>
+                  <span class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Relatório por Colaborador: Produtividade e cálculo de comissões</span>
+                </div>
+                <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+
+              <a href="artigo.html?id=relatorio-terminal-cupom" class="faq-article-item flex items-center justify-between p-md bg-surface-container-low hover:bg-surface-container rounded-lg transition-all group">
+                <div class="flex items-center gap-xs">
+                  <span class="material-symbols-outlined text-primary text-[22px]">article</span>
+                  <span class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Conferência de Maquininhas, Cupons de Desconto e Gorjetas</span>
+                </div>
+                <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
             </div>
           </article>
 
-          <!-- 6. KDS -->
+          <!-- MÓDULO 6: OPERAÇÃO KDS -->
           <article class="faq-category-card bg-surface-container-lowest rounded-xl p-md shadow-sm scroll-mt-24" id="kds">
             <header class="flex items-start gap-md mb-md">
               <div class="w-12 h-12 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center shrink-0">
                 <span class="material-symbols-outlined text-[28px]">soup_kitchen</span>
               </div>
               <div class="flex-1">
-                <h2 class="font-headline-lg text-headline-lg text-on-surface">Operação em Tempo Real & Cozinha (KDS)</h2>
+                <div class="font-label-md text-label-md text-tertiary font-bold uppercase tracking-wider">Módulo 06</div>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">Operação em Tempo Real &amp; Cozinha (KDS)</h2>
                 <p class="font-body-md text-body-md text-on-surface-variant">Acompanhe picos de venda ao vivo e gerencie a fila de preparo de pratos e drinks.</p>
               </div>
             </header>
+
             <div class="space-y-sm">
-              <div class="faq-item rounded-lg bg-surface-container-low overflow-hidden">
-                <button class="faq-toggle w-full p-md flex items-center justify-between text-left hover:bg-surface-container transition-colors">
-                  <span class="font-headline-md text-headline-md text-on-surface">Como utilizar a Tela da Cozinha (KDS) e o Monitor ao Vivo</span>
-                  <span class="material-symbols-outlined text-on-surface-variant faq-icon transition-transform duration-300">expand_more</span>
-                </button>
-                <div class="faq-content hidden p-md pt-0">
-                  <div class="bg-surface-container-lowest rounded-lg p-md space-y-md">
-                    <p class="font-body-md text-on-surface">Gerencie os pedidos na fila da cozinha e dê baixa assim que ficarem prontos[cite: 1].</p>
-                  </div>
+              <a href="artigo.html?id=operacao-kds" class="faq-article-item flex items-center justify-between p-md bg-surface-container-low hover:bg-surface-container rounded-lg transition-all group">
+                <div class="flex items-center gap-xs">
+                  <span class="material-symbols-outlined text-tertiary text-[22px]">article</span>
+                  <span class="font-headline-md text-headline-md text-on-surface group-hover:text-tertiary transition-colors">Como utilizar o Painel Em Tempo Real e a Fila de Preparo (KDS)</span>
                 </div>
-              </div>
+                <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
             </div>
           </article>
 
@@ -377,40 +453,30 @@
   </div>
 
   <script>
-    // Accordion Interaction
-    const toggles = document.querySelectorAll('.faq-toggle');
-    toggles.forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        const content = toggle.nextElementSibling;
-        const icon = toggle.querySelector('.faq-icon');
-        const isHidden = content.classList.contains('hidden');
-
-        if (isHidden) {
-          content.classList.remove('hidden');
-          icon.classList.add('rotate-180');
-        } else {
-          content.classList.add('hidden');
-          icon.classList.remove('rotate-180');
-        }
-      });
-    });
-
-    // Search Filter
+    // Busca em Tempo Real
     const searchInput = document.getElementById('faq-search');
-    const faqCards = document.querySelectorAll('.faq-category-card');
+    const articles = document.querySelectorAll('.faq-article-item');
+    const categories = document.querySelectorAll('.faq-category-card');
 
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase().trim();
-        faqCards.forEach(card => {
-          const text = card.textContent.toLowerCase();
+
+        articles.forEach(article => {
+          const text = article.textContent.toLowerCase();
           if (query === '' || text.includes(query)) {
-            card.classList.remove('hidden');
-            if (query !== '') {
-              card.querySelectorAll('.faq-content').forEach(c => c.classList.remove('hidden'));
-            }
+            article.style.display = '';
           } else {
-            card.classList.add('hidden');
+            article.style.display = 'none';
+          }
+        });
+
+        categories.forEach(category => {
+          const visibleArticles = category.querySelectorAll('.faq-article-item:not([style*="display: none"])');
+          if (visibleArticles.length === 0 && query !== '') {
+            category.style.display = 'none';
+          } else {
+            category.style.display = '';
           }
         });
       });
