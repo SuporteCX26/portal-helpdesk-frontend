@@ -1,38 +1,39 @@
-{
-  "configuracoes-identidade": {
+"configuracoes-identidade": {
     "id": "configuracoes-identidade",
     "titulo": "Como preencher as Informações Gerais e Identidade Visual",
     "categoria": "Configurações da Loja",
     "categoriaId": "configuracoes",
     "tempoLeitura": "3 min de leitura",
     "atualizadoEm": "Setembro, 2026",
-    "videoUrl": "https://www.youtube.com/embed/SEU_ID_DO_VIDEO",
-    "descricao": "O menu Configurações é onde você define a identidade visual, endereço e horários de funcionamento base do seu estabelecimento na plataforma iTicket.",
+    "videoUrl": "",
+    "descricao": "O menu Configurações é onde você define a identidade, regras e o funcionamento base do seu estabelecimento dentro da plataforma iTicket.",
     "prerequisitos": [
-      "Logotipo da empresa em arquivo PNG ou JPG (recomendado fundo transparente).",
-      "Foto de capa do estabelecimento (proporção recomendada 16:9).",
-      "Endereço completo com CEP e horários de atendimento definidos."
+      "Logotipo da empresa (PNG ou JPG).",
+      "Imagem de capa do local.",
+      "Endereço completo com CEP e horários de atendimento."
     ],
+  
     "passos": [
       {
         "numero": 1,
-        "titulo": "Acessar o menu Configurações",
-        "descricao": "No menu lateral esquerdo do Dashboard, clique no ícone de engrenagem (**Configurações**)."
+        "titulo": "Acessando as Configurações do Evento",
+        "descricao": "No menu lateral esquerdo do Dashboard, clique no ícone de engrenagem (**Configurações**).",
+        "imagem": "https://lh3.googleusercontent.com/d/1K8fYvU1maqabwlCwfifOrieQoNlr9SDf"
       },
+      
       {
         "numero": 2,
-        "titulo": "Preencher dados básicos e endereço",
-        "descricao": "Digite o **Nome do Evento/Loja**, **CEP**, **Cidade** e **Endereço completo**. Em seguida, defina os **Horários de Funcionamento** para que o sistema altere automaticamente o status da loja para 'Aberto' ou 'Fechado'."
+        "titulo": "Preenchendo dados básicos e endereço",
+        "descricao": "Insira o **Nome do Evento**, o **CEP**, a **Cidade** e o **Endereço completo**. Defina os **Horários de Funcionamento** para que o sistema altere automaticamente o status da sua loja para 'Aberto' ou 'Fechado'."
       },
       {
         "numero": 3,
-        "titulo": "Fazer upload do Logotipo e Capa",
-        "descricao": "Na seção de imagens, faça o upload da sua **Foto de Perfil** (logotipo que aparecerá nos cupons e cardápio digital) e da **Foto de Capa**. Para finalizar, clique no botão rosa **Salvar**."
+        "titulo": "Adicionando Logotipo e Foto de Capa",
+        "descricao": "Na seção de imagens, faça o upload da **Foto de Perfil** (seu logotipo, que aparecerá nos cupons e menus digitais) e da **Foto de Capa** do local. Clicando em **Salvar**, sua vitrine está pronta!"
       }
     ],
-    "dicaOuro": "Mantenha os horários de funcionamento sempre atualizados no painel para evitar que clientes façam pedidos online fora do expediente!",
+    "dicaOuro": "Mantenha os horários de funcionamento sempre atualizados para evitar que clientes façam pedidos online fora do expediente!",
     "relacionados": [
-      { "id": "regras-operacao", "titulo": "Como configurar as Regras de Operação e Pedidos (KDS e QR Code)" }
+      { "id": "regras-operacao", "titulo": "Como configurar as Regras de Operação e Pedidos" }
     ]
   }
-}
