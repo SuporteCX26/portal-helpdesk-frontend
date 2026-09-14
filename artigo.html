@@ -13,6 +13,7 @@
   <style>
     @layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } }
     ::-webkit-scrollbar { display: none; }
+    html { scroll-behavior: smooth; }
   </style>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -128,7 +129,7 @@
   <!-- Sidebar Lateral -->
   <aside class="fixed left-0 top-16 bottom-0 w-72 bg-surface-container-lowest border-r border-surface-container-high z-40 flex flex-col justify-between overflow-y-auto">
     <div class="p-md">
-      <div class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-sm px-xs">Manuais & Tutoriais</div>
+      <div class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-sm px-xs">Manuais &amp; Tutoriais</div>
       <nav class="space-y-base">
         <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="faq.html#configuracoes">
           <span class="material-symbols-outlined text-[20px]">store</span><span>Configurações da Loja</span>
@@ -137,18 +138,29 @@
           <span class="material-symbols-outlined text-[20px]">badge</span><span>Equipe e Permissões</span>
         </a>
         <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="faq.html#produtos">
-          <span class="material-symbols-outlined text-[20px]">restaurant_menu</span><span>Produtos & Cardápio</span>
+          <span class="material-symbols-outlined text-[20px]">restaurant_menu</span><span>Produtos &amp; Cardápio</span>
         </a>
         <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="faq.html#financeiro">
-          <span class="material-symbols-outlined text-[20px]">payments</span><span>Financeiro & Recebimento</span>
+          <span class="material-symbols-outlined text-[20px]">payments</span><span>Financeiro &amp; Recebimento</span>
         </a>
         <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="faq.html#relatorios">
           <span class="material-symbols-outlined text-[20px]">analytics</span><span>Relatórios de Vendas</span>
         </a>
         <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="faq.html#kds">
-          <span class="material-symbols-outlined text-[20px]">soup_kitchen</span><span>Operação & Cozinha (KDS)</span>
+          <span class="material-symbols-outlined text-[20px]">soup_kitchen</span><span>Operação &amp; Cozinha (KDS)</span>
         </a>
       </nav>
+    </div>
+    <div class="p-md border-t border-surface-container">
+      <div class="bg-surface-container-low p-sm rounded-xl">
+        <div class="font-label-md text-label-md text-on-surface mb-xs flex items-center gap-xs">
+          <span class="material-symbols-outlined text-secondary text-[18px]">live_help</span>Precisa de ajuda urgente?
+        </div>
+        <p class="font-body-md text-[13px] text-on-surface-variant mb-xs">Nossa equipe de suporte está disponível em tempo real.</p>
+        <a href="novo-ticket.html" class="text-secondary hover:text-on-secondary-fixed-variant font-label-md text-[13px] flex items-center gap-xs">
+          Falar com analista <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+        </a>
+      </div>
     </div>
   </aside>
 
@@ -166,7 +178,7 @@
           <span id="article-category-breadcrumb" class="text-primary font-semibold">Carregando...</span>
         </nav>
 
-        <!-- Artigo Container -->
+        <!-- Container Principal do Artigo -->
         <article class="bg-surface-container-lowest rounded-xl p-lg shadow-sm space-y-md border border-surface-container-high">
           
           <!-- Cabeçalho -->
@@ -183,12 +195,12 @@
             <p id="article-desc" class="font-body-lg text-body-lg text-on-surface-variant"></p>
           </header>
 
-          <!-- Video Player -->
+          <!-- Vídeo Principal (opcional) -->
           <div id="video-container" class="aspect-video w-full bg-slate-900 rounded-xl overflow-hidden shadow-sm hidden">
             <iframe id="article-video" class="w-full h-full" src="" title="Video Tutorial" frameborder="0" allowfullscreen></iframe>
           </div>
 
-          <!-- Pre-requisitos -->
+          <!-- Pré-requisitos -->
           <div id="prereq-container" class="bg-surface-container-low rounded-xl p-md space-y-xs hidden">
             <h3 class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-xs">
               <span class="material-symbols-outlined text-secondary text-[20px]">check_box</span>
@@ -197,7 +209,7 @@
             <ul id="prereq-list" class="space-y-xs font-body-md text-on-surface list-disc pl-md"></ul>
           </div>
 
-          <!-- Passo a Passo -->
+          <!-- Passos Numerados com Suporte a Imagens e GIFs -->
           <div class="space-y-sm">
             <h3 class="font-headline-md text-headline-md text-on-surface">Passo a Passo Detalhado</h3>
             <div id="steps-container" class="space-y-sm"></div>
@@ -214,7 +226,18 @@
             </div>
           </div>
 
-          <!-- Bloco de Feedback (Foi útil?) -->
+          <!-- Caixa de Alerta (opcional) -->
+          <div id="alerta-container" class="bg-error-container/50 rounded-xl p-md flex items-start gap-sm hidden border border-error/20">
+            <div class="w-9 h-9 rounded-lg bg-error text-on-error flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[20px]">warning</span>
+            </div>
+            <div>
+              <div class="font-label-md text-label-md font-bold text-error mb-base">Atenção</div>
+              <p id="alerta-text" class="font-body-md text-on-surface"></p>
+            </div>
+          </div>
+
+          <!-- Bloco de Avaliação (Feedback) -->
           <section class="border-t border-surface-container-high pt-md mt-lg flex flex-col sm:flex-row items-center justify-between gap-md bg-surface-container-low p-md rounded-xl">
             <div>
               <h4 class="font-headline-md text-headline-md text-on-surface">Este artigo foi útil?</h4>
@@ -258,6 +281,12 @@
 
   <!-- JavaScript Dinâmico -->
   <script>
+    // Função para converter marcação **negrito** em tag HTML <strong>
+    function parseMarkdown(text) {
+      if (!text) return '';
+      return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    }
+
     document.addEventListener('DOMContentLoaded', async () => {
       const urlParams = new URLSearchParams(window.location.search);
       const articleId = urlParams.get('id') || 'configuracoes-identidade';
@@ -279,10 +308,10 @@
         document.getElementById('article-time').querySelector('span:last-child').innerText = artigo.tempoLeitura;
         document.getElementById('article-date').innerText = `• Atualizado em ${artigo.atualizadoEm}`;
         document.getElementById('article-title').innerText = artigo.titulo;
-        document.getElementById('article-desc').innerText = artigo.descricao;
+        document.getElementById('article-desc').innerHTML = parseMarkdown(artigo.descricao);
 
-        // Video Embed
-        if (artigo.videoUrl) {
+        // Vídeo Principal Embed
+        if (artigo.videoUrl && artigo.videoUrl.trim() !== '') {
           document.getElementById('video-container').classList.remove('hidden');
           document.getElementById('article-video').src = artigo.videoUrl;
         }
@@ -292,36 +321,58 @@
           const prereqContainer = document.getElementById('prereq-container');
           const prereqList = document.getElementById('prereq-list');
           prereqContainer.classList.remove('hidden');
+          prereqList.innerHTML = '';
           artigo.prerequisitos.forEach(req => {
             const li = document.createElement('li');
-            li.innerText = req;
+            li.innerHTML = parseMarkdown(req);
             prereqList.appendChild(li);
           });
         }
 
-        // Passo a Passo
+        // Renderiza Passos Numerados + GIFs/Imagens
         const stepsContainer = document.getElementById('steps-container');
+        stepsContainer.innerHTML = '';
         artigo.passos.forEach(passo => {
           const div = document.createElement('div');
-          div.className = 'flex items-start gap-sm bg-surface-container-low p-md rounded-xl';
+          div.className = 'bg-surface-container-low p-md rounded-xl space-y-sm';
+
+          let imgElement = '';
+          if (passo.imagem && passo.imagem.trim() !== '') {
+            imgElement = `
+              <div class="mt-sm rounded-xl overflow-hidden border border-surface-container-high shadow-sm max-w-3xl">
+                <img src="${passo.imagem}" alt="${passo.titulo}" class="w-full h-auto object-cover rounded-xl" loading="lazy">
+              </div>
+            `;
+          }
+
           div.innerHTML = `
-            <span class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-base flex items-center justify-center shrink-0">${passo.numero}</span>
-            <div>
-              <h4 class="font-headline-md text-headline-md text-on-surface mb-base">${passo.titulo}</h4>
-              <p class="font-body-md text-on-surface-variant">${passo.descricao}</p>
+            <div class="flex items-start gap-sm">
+              <span class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-md text-base flex items-center justify-center shrink-0 mt-0.5">${passo.numero}</span>
+              <div class="flex-1">
+                <h4 class="font-headline-md text-headline-md text-on-surface mb-base">${passo.titulo}</h4>
+                <div class="font-body-md text-on-surface-variant leading-relaxed">${parseMarkdown(passo.descricao)}</div>
+                ${imgElement}
+              </div>
             </div>
           `;
           stepsContainer.appendChild(div);
         });
 
         // Dica de Ouro
-        if (artigo.dicaOuro) {
+        if (artigo.dicaOuro && artigo.dicaOuro.trim() !== '') {
           document.getElementById('dica-container').classList.remove('hidden');
-          document.getElementById('dica-text').innerText = artigo.dicaOuro;
+          document.getElementById('dica-text').innerHTML = parseMarkdown(artigo.dicaOuro);
+        }
+
+        // Caixa de Alerta
+        if (artigo.alerta && artigo.alerta.trim() !== '') {
+          document.getElementById('alerta-container').classList.remove('hidden');
+          document.getElementById('alerta-text').innerHTML = parseMarkdown(artigo.alerta);
         }
 
         // Artigos Relacionados
         const relGrid = document.getElementById('relacionados-grid');
+        relGrid.innerHTML = '';
         if (artigo.relacionados && artigo.relacionados.length > 0) {
           artigo.relacionados.forEach(rel => {
             const a = document.createElement('a');
