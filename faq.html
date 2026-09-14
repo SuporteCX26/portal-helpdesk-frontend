@@ -130,27 +130,27 @@
     </div>
   </header>
 
-  <!-- Sidebar Lateral -->
+  <!-- Sidebar Lateral com links direcionando para parâmetros de categoria -->
   <aside class="fixed left-0 top-16 bottom-0 w-72 bg-surface-container-lowest border-r border-surface-container-high z-40 flex flex-col justify-between overflow-y-auto">
     <div class="p-md">
       <div class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-sm px-xs">Manuais &amp; Tutoriais</div>
       <nav class="space-y-base">
-        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="#configuracoes">
+        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="faq.html?categoria=configuracoes">
           <span class="material-symbols-outlined text-[20px]">store</span><span>Configurações da Loja</span>
         </a>
-        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="#equipe">
+        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="faq.html?categoria=equipe">
           <span class="material-symbols-outlined text-[20px]">badge</span><span>Equipe e Permissões</span>
         </a>
-        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="#produtos">
+        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="faq.html?categoria=produtos">
           <span class="material-symbols-outlined text-[20px]">restaurant_menu</span><span>Produtos &amp; Cardápio</span>
         </a>
-        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="#financeiro">
+        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="faq.html?categoria=financeiro">
           <span class="material-symbols-outlined text-[20px]">payments</span><span>Financeiro &amp; Recebimento</span>
         </a>
-        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="#relatorios">
+        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="faq.html?categoria=relatorios">
           <span class="material-symbols-outlined text-[20px]">analytics</span><span>Relatórios de Vendas</span>
         </a>
-        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="#kds">
+        <a class="flex items-center gap-xs px-sm py-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all" href="faq.html?categoria=kds">
           <span class="material-symbols-outlined text-[20px]">soup_kitchen</span><span>Operação &amp; Cozinha (KDS)</span>
         </a>
       </nav>
@@ -173,10 +173,22 @@
     <main class="flex-1 pt-16 px-gutter bg-surface">
       <div class="flex flex-col w-full py-md">
         
+        <!-- Banner de Filtro Ativo / Retorno -->
+        <div id="filter-banner" class="hidden mb-md flex items-center justify-between bg-secondary-container/20 border border-secondary/20 p-sm rounded-xl">
+          <div class="flex items-center gap-xs text-secondary font-label-md text-label-md">
+            <span class="material-symbols-outlined text-[20px]">filter_alt</span>
+            <span>Exibindo apenas artigos do módulo selecionado.</span>
+          </div>
+          <a href="faq.html" class="inline-flex items-center gap-xs bg-surface-container-lowest text-secondary hover:text-on-secondary-fixed-variant font-headline-md text-xs px-sm py-base rounded-lg border border-surface-container-high transition-colors shadow-sm">
+            <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+            <span>Ver todas as categorias</span>
+          </a>
+        </div>
+
         <!-- Banner de Busca -->
         <section class="relative bg-surface-container-lowest py-lg px-gutter rounded-xl shadow-sm mb-lg overflow-hidden">
           <div class="relative max-w-3xl mx-auto text-center flex flex-col items-center">
-            <h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight mb-xs">
+            <h1 id="page-banner-title" class="font-headline-xl text-headline-xl text-on-surface tracking-tight mb-xs">
               Manuais e Tutoriais do Sistema iTicket
             </h1>
             <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-md">
@@ -193,38 +205,38 @@
         </section>
 
         <!-- Atalhos Rápidos para Categorias -->
-        <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-xs mb-lg">
-          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#configuracoes">
+        <section id="quick-category-nav" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-xs mb-lg">
+          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="faq.html?categoria=configuracoes">
             <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
               <span class="material-symbols-outlined text-[22px]">storefront</span>
             </div>
             <span class="font-label-md text-label-md text-on-surface">Configurações</span>
           </a>
-          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#equipe">
+          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="faq.html?categoria=equipe">
             <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
               <span class="material-symbols-outlined text-[22px]">badge</span>
             </div>
             <span class="font-label-md text-label-md text-on-surface">Equipe</span>
           </a>
-          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#produtos">
+          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="faq.html?categoria=produtos">
             <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
               <span class="material-symbols-outlined text-[22px]">restaurant_menu</span>
             </div>
             <span class="font-label-md text-label-md text-on-surface">Cardápio</span>
           </a>
-          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#financeiro">
+          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="faq.html?categoria=financeiro">
             <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
               <span class="material-symbols-outlined text-[22px]">payments</span>
             </div>
             <span class="font-label-md text-label-md text-on-surface">Financeiro</span>
           </a>
-          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#relatorios">
+          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="faq.html?categoria=relatorios">
             <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
               <span class="material-symbols-outlined text-[22px]">analytics</span>
             </div>
             <span class="font-label-md text-label-md text-on-surface">Relatórios</span>
           </a>
-          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="#kds">
+          <a class="p-sm bg-surface-container-lowest rounded-lg hover:shadow-md transition-all group flex flex-col items-center text-center" href="faq.html?categoria=kds">
             <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors mb-xs">
               <span class="material-symbols-outlined text-[22px]">soup_kitchen</span>
             </div>
@@ -260,7 +272,7 @@
               <a href="artigo.html?id=regras-operacao" class="faq-article-item flex items-center justify-between p-md bg-surface-container-low hover:bg-surface-container rounded-lg transition-all group">
                 <div class="flex items-center gap-xs">
                   <span class="material-symbols-outlined text-primary text-[22px]">article</span>
-                  <span class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Como configurar as Regras de Operação e Pedidos (KDS e QR Code)</span>
+                  <span class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Como configurar as Regras de Operação e Configurações Avançadas</span>
                 </div>
                 <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </a>
@@ -453,34 +465,62 @@
   </div>
 
   <script>
-    // Busca em Tempo Real
-    const searchInput = document.getElementById('faq-search');
-    const articles = document.querySelectorAll('.faq-article-item');
-    const categories = document.querySelectorAll('.faq-category-card');
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const selectedCat = urlParams.get('categoria') || urlParams.get('cat');
+      const categoryCards = document.querySelectorAll('.faq-category-card');
+      const filterBanner = document.getElementById('filter-banner');
+      const quickNav = document.getElementById('quick-category-nav');
 
-    if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
-
-        articles.forEach(article => {
-          const text = article.textContent.toLowerCase();
-          if (query === '' || text.includes(query)) {
-            article.style.display = '';
+      // Se houver parâmetro de categoria na URL, exibe APENAS aquele módulo
+      if (selectedCat) {
+        let found = false;
+        categoryCards.forEach(card => {
+          if (card.id === selectedCat) {
+            card.style.display = 'block';
+            found = true;
           } else {
-            article.style.display = 'none';
+            card.style.display = 'none';
           }
         });
 
-        categories.forEach(category => {
-          const visibleArticles = category.querySelectorAll('.faq-article-item:not([style*="display: none"])');
-          if (visibleArticles.length === 0 && query !== '') {
-            category.style.display = 'none';
-          } else {
-            category.style.display = '';
-          }
+        if (found) {
+          if (filterBanner) filterBanner.classList.remove('hidden');
+          if (quickNav) quickNav.classList.add('hidden'); // Oculta atalhos redundantes
+        }
+      }
+
+      // Filtro da Busca em Tempo Real
+      const searchInput = document.getElementById('faq-search');
+      const articles = document.querySelectorAll('.faq-article-item');
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const query = e.target.value.toLowerCase().trim();
+
+          articles.forEach(article => {
+            const text = article.textContent.toLowerCase();
+            if (query === '' || text.includes(query)) {
+              article.style.display = '';
+            } else {
+              article.style.display = 'none';
+            }
+          });
+
+          // Oculta módulo se nenhum artigo dele bater com a busca
+          categoryCards.forEach(category => {
+            if (selectedCat && category.id !== selectedCat) return; // Mantém restrição se já estiver filtrado
+
+            const visibleArticles = category.querySelectorAll('.faq-article-item:not([style*="display: none"])');
+            if (visibleArticles.length === 0 && query !== '') {
+              category.style.display = 'none';
+            } else if (!selectedCat || category.id === selectedCat) {
+              category.style.display = 'block';
+            }
+          });
         });
-      });
-    }
+      }
+    });
   </script>
 </body>
 </html>
