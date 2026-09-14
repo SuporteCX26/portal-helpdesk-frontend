@@ -1,4 +1,5 @@
-"configuracoes-identidade": {
+{
+  "configuracoes-identidade": {
     "id": "configuracoes-identidade",
     "titulo": "Como preencher as Informações Gerais e Identidade Visual",
     "categoria": "Configurações da Loja",
@@ -33,7 +34,54 @@
       }
     ],
     "dicaOuro": "Mantenha os horários de funcionamento sempre atualizados para evitar que clientes façam pedidos online fora do expediente!",
+    "alerta": "",
     "relacionados": [
-      { "id": "regras-operacao", "titulo": "Como configurar as Regras de Operação e Pedidos" }
+      {
+        "id": "regras-operacao",
+        "titulo": "Como configurar as Regras de Operação e Pedidos"
+      }
+    ]
+  },
+  "regras-operacao": {
+    "id": "regras-operacao",
+    "titulo": "Como configurar as Regras de Operação e Configurações Avançadas",
+    "categoria": "Configurações da Loja",
+    "categoriaId": "configuracoes",
+    "tempoLeitura": "4 min de leitura",
+    "atualizadoEm": "Setembro, 2026",
+    "videoUrl": "",
+    "descricao": "Ajuste as chaves de operação no menu Configurações Avançadas para definir o fluxo dos pedidos até a cozinha, formas de pagamento aceitas no App e interatividade no salão.",
+    "prerequisitos": [
+      "Acesso com perfil de Administrador no painel iTicket.",
+      "Especificações das funcionalidades liberadas no seu contrato comercial."
+    ],
+    "passos": [
+      {
+        "numero": 1,
+        "titulo": "Acessando as Chaves da Operação",
+        "descricao": "Acesse o menu **Configurações Avançadas** na aba ao lado do painel de Configurações. Habilite as opções desejadas conforme as especificações do seu contrato comercial.",
+        "imagem": ""
+      },
+      {
+        "numero": 2,
+        "titulo": "Ativando o Envio para Cozinha e Notificações",
+        "descricao": "Ao ativar a opção **Envio automático para a cozinha**, os pedidos de pratos e bebidas são encaminhados diretamente para o KDS assim que o pagamento for confirmado. Habilite a opção **Avisar cliente via WhatsApp/SMS** para enviar uma notificação automática ao cliente quando a cozinha alterar o status do pedido para 'Pronto'.",
+        "imagem": ""
+      },
+      {
+        "numero": 3,
+        "titulo": "Configurando os Pedidos na Mesa (QR Code)",
+        "descricao": "Na opção **Permitir pedidos na mesa via QR Code**, defina se o cliente poderá realizar pedidos de forma autônoma diretamente pelo celular ou se o código funcionará apenas como visualizador do cardápio digital.",
+        "imagem": ""
+      }
+    ],
+    "dicaOuro": "Caso o seu estabelecimento ou evento opere apenas em formato de exposição (sem pagamentos online), ative a opção Apenas Cardápio Digital para transformar a tela em uma vitrine virtual intuitiva.",
+    "alerta": "",
+    "relacionados": [
+      {
+        "id": "configuracoes-identidade",
+        "titulo": "Como preencher as Informações Gerais e Identidade Visual"
+      }
     ]
   }
+}
